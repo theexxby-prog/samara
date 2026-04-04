@@ -3,69 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samara Mehta — Designer & Developer</title>
+  <title>Samara Mehta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --purple: #7c3aed;
-      --purple-light: #a78bfa;
-      --pink: #ec4899;
-      --pink-light: #f9a8d4;
-      --blue: #3b82f6;
-      --blue-light: #93c5fd;
-      --dark: #0f0a1e;
-      --dark-2: #1a1030;
-      --dark-3: #231840;
-      --surface: #1e1535;
-      --surface-2: #2a1f4a;
-      --text: #f8f4ff;
-      --text-muted: #a89cc8;
-      --border: rgba(167,139,250,0.15);
-      --gradient: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #3b82f6 100%);
-      --gradient-soft: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(236,72,153,0.15) 50%, rgba(59,130,246,0.15) 100%);
+      --cream: #fdf8f3;
+      --warm-white: #fffcf8;
+      --espresso: #2c1a0e;
+      --brown: #6b3f1f;
+      --caramel: #c47d3e;
+      --latte: #d4a96a;
+      --foam: #f5ede0;
+      --mist: #ede8e0;
+      --text: #3a2a1a;
+      --text-light: #7a6a5a;
+      --accent: #b85c2a;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--dark);
+      background: var(--cream);
       color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
-
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--dark); }
-    ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
 
     /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
+      background: rgba(253, 248, 243, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--mist);
       padding: 0 2rem;
-      height: 68px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(15,10,30,0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.3s;
     }
 
     .nav-logo {
+      font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
-      font-weight: 800;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-weight: 700;
+      color: var(--espresso);
       letter-spacing: -0.02em;
     }
 
@@ -76,360 +63,229 @@
     }
 
     .nav-links a {
-      color: var(--text-muted);
       text-decoration: none;
       font-size: 0.875rem;
       font-weight: 500;
+      color: var(--text-light);
       transition: color 0.2s;
-      letter-spacing: 0.02em;
     }
 
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-cta {
-      padding: 0.5rem 1.25rem;
-      background: var(--gradient);
-      color: white !important;
-      border-radius: 8px;
-      font-weight: 600 !important;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px; height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     /* HERO */
-    #hero {
+    .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      background: linear-gradient(160deg, #fff9f4 0%, #fdf0e0 50%, #f8e8d4 100%);
+      padding: 100px 2rem 4rem;
       position: relative;
       overflow: hidden;
-      padding: 7rem 2rem 4rem;
     }
 
-    .hero-bg {
+    .hero::before {
+      content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.5) 0%, transparent 70%),
-                  radial-gradient(ellipse 60% 50% at 80% 80%, rgba(236,72,153,0.3) 0%, transparent 60%),
-                  radial-gradient(ellipse 50% 40% at 10% 70%, rgba(59,130,246,0.25) 0%, transparent 60%),
-                  var(--dark);
-    }
-
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.4;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .hero-orb-1 {
+      top: -100px; right: -100px;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, #7c3aed, transparent);
-      top: -200px; left: -100px;
-      animation-delay: 0s;
-    }
-
-    .hero-orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, #ec4899, transparent);
-      bottom: -100px; right: -50px;
-      animation-delay: -3s;
-    }
-
-    .hero-orb-3 {
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, #3b82f6, transparent);
-      top: 40%; left: 60%;
-      animation-delay: -6s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-30px) scale(1.05); }
-    }
-
-    .hero-content {
-      position: relative;
-      text-align: center;
-      max-width: 800px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-      background: rgba(124,58,237,0.2);
-      border: 1px solid rgba(124,58,237,0.4);
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--purple-light);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 0.6s ease both;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--purple-light);
+      background: radial-gradient(circle, rgba(196,125,62,0.12) 0%, transparent 70%);
       border-radius: 50%;
-      animation: pulse 2s infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.3); }
-    }
-
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      animation: fadeInUp 0.6s ease 0.1s both;
-    }
-
-    .hero-name-gradient {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-tagline {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      color: var(--text-muted);
-      font-weight: 300;
-      margin-bottom: 2.5rem;
-      animation: fadeInUp 0.6s ease 0.2s both;
-    }
-
-    .hero-tagline strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeInUp 0.6s ease 0.3s both;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      background: var(--gradient);
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      box-shadow: 0 0 40px rgba(124,58,237,0.4);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 60px rgba(124,58,237,0.6);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      background: transparent;
-      color: var(--text);
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(167,139,250,0.4);
-      background: rgba(124,58,237,0.08);
-      transform: translateY(-2px);
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      animation: fadeInUp 0.6s ease 0.6s both;
-    }
-
-    .scroll-line {
-      width: 1px; height: 50px;
-      background: linear-gradient(to bottom, var(--purple-light), transparent);
-      animation: scrollLine 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollLine {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    /* SECTIONS */
-    section { padding: 6rem 2rem; }
-
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--purple-light);
-      margin-bottom: 1rem;
-    }
-
-    .section-label::before {
+    .hero::after {
       content: '';
-      width: 24px; height: 2px;
-      background: var(--gradient);
-      border-radius: 1px;
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(184,92,42,0.08) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .section-sub {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 520px;
-      line-height: 1.7;
-    }
-
-    .grad-text {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ABOUT */
-    #about { background: var(--dark-2); }
-
-    .about-grid {
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .about-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--gradient);
-    }
-
-    .about-avatar {
-      width: 80px; height: 80px;
-      border-radius: 20px;
-      background: var(--gradient);
-      display: flex;
+    .hero-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-size: 2rem;
+      gap: 0.5rem;
+      background: var(--foam);
+      border: 1px solid var(--latte);
+      border-radius: 99px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--brown);
       margin-bottom: 1.5rem;
     }
 
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
+    .hero-badge span { font-size: 1rem; }
 
-    .stat-item {
-      background: var(--surface-2);
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 1.75rem;
-      font-weight: 800;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-top: 0.25rem;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.8;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
     }
 
-    .about-text p strong { color: var(--text); }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 480px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--espresso);
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--brown); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--espresso);
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--espresso);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-outline:hover { background: var(--foam); transform: translateY(-1px); }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--warm-white);
+      border: 1px solid var(--mist);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(44,26,14,0.06);
+    }
+
+    .stat-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .stat-card.accent-card {
+      background: var(--espresso);
+      border-color: var(--espresso);
+      grid-column: span 2;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stat-card.accent-card .num,
+    .stat-card.accent-card .label { color: #fff; }
+    .stat-card.accent-card .label { opacity: 0.7; }
+
+    .coffee-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    /* SECTION SHARED */
+    section { padding: 6rem 2rem; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--espresso);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ABOUT */
+    #about { background: var(--warm-white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .about-text p strong { color: var(--text); font-weight: 600; }
 
     .about-tags {
       display: flex;
@@ -439,17 +295,205 @@
     }
 
     .tag {
-      padding: 0.35rem 0.875rem;
-      background: rgba(124,58,237,0.15);
-      border: 1px solid rgba(124,58,237,0.25);
-      border-radius: 100px;
+      background: var(--foam);
+      border: 1px solid var(--latte);
+      color: var(--brown);
       font-size: 0.8rem;
       font-weight: 500;
-      color: var(--purple-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+    }
+
+    .about-highlight {
+      background: var(--foam);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid var(--mist);
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-item:last-child { margin-bottom: 0; }
+
+    .highlight-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--warm-white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      border: 1px solid var(--mist);
+    }
+
+    .highlight-text h4 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--espresso);
+      margin-bottom: 0.2rem;
+    }
+
+    .highlight-text p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* EXPERIENCE */
+    #experience { background: var(--cream); }
+
+    .timeline {
+      margin-top: 3.5rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--latte), var(--mist));
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-dot {
+      width: 58px;
+      height: 58px;
+      background: var(--warm-white);
+      border: 2px solid var(--latte);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 2px 12px rgba(44,26,14,0.08);
+    }
+
+    .timeline-dot.current {
+      background: var(--espresso);
+      border-color: var(--espresso);
+    }
+
+    .timeline-card {
+      background: var(--warm-white);
+      border: 1px solid var(--mist);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      flex: 1;
+      box-shadow: 0 2px 16px rgba(44,26,14,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(44,26,14,0.1);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--espresso);
+    }
+
+    .timeline-period {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--foam);
+      padding: 0.3rem 0.8rem;
+      border-radius: 99px;
+      border: 1px solid var(--latte);
+      white-space: nowrap;
+    }
+
+    .timeline-company {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .timeline-bullets li {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.55;
+    }
+
+    .timeline-bullets li::before {
+      content: '→';
+      color: var(--caramel);
+      font-size: 0.8rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .chip {
+      background: var(--foam);
+      border: 1px solid var(--latte);
+      color: var(--brown);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.7rem;
+      border-radius: 99px;
     }
 
     /* SKILLS */
-    #skills { background: var(--dark); }
+    #skills { background: var(--foam); }
 
     .skills-grid {
       display: grid;
@@ -459,963 +503,596 @@
     }
 
     .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--warm-white);
+      border: 1px solid var(--mist);
       border-radius: 20px;
       padding: 2rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--gradient-soft);
-      opacity: 0;
-      transition: opacity 0.3s;
-      border-radius: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(167,139,250,0.3);
-      box-shadow: 0 20px 60px rgba(124,58,237,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(44,26,14,0.1);
     }
-
-    .skill-card:hover::after { opacity: 1; }
 
     .skill-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .skill-icon-design { background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(167,139,250,0.2)); }
-    .skill-icon-dev { background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(147,197,253,0.2)); }
-    .skill-icon-cx { background: linear-gradient(135deg, rgba(236,72,153,0.3), rgba(249,168,212,0.2)); }
-
-    .skill-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .skill-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .skill-pill {
-      padding: 0.25rem 0.7rem;
-      background: var(--surface-2);
-      border-radius: 6px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .skill-card:hover .skill-pill { color: var(--text); }
-
-    /* EXPERIENCE */
-    #experience { background: var(--dark-2); }
-
-    .timeline {
-      position: relative;
-      margin-top: 3rem;
-      padding-left: 2.5rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--purple), var(--pink), var(--blue));
-      border-radius: 1px;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-    }
-
-    .timeline-item:last-child { margin-bottom: 0; }
-
-    .timeline-dot {
-      position: absolute;
-      left: -2.5rem;
-      top: 0.5rem;
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      background: var(--gradient);
-      border: 2px solid var(--dark-2);
-      transform: translateX(-6px);
-    }
-
-    .timeline-dot::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: var(--gradient);
-      opacity: 0.2;
-    }
-
-    .timeline-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      transition: all 0.3s;
-    }
-
-    .timeline-card:hover {
-      border-color: rgba(167,139,250,0.3);
-      transform: translateX(4px);
-    }
-
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .timeline-role {
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .timeline-period {
-      font-size: 0.8rem;
-      color: var(--purple-light);
-      font-weight: 600;
-      background: rgba(124,58,237,0.15);
-      padding: 0.25rem 0.75rem;
-      border-radius: 100px;
-      white-space: nowrap;
-    }
-
-    .timeline-company {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--purple-light);
-      margin-bottom: 0.75rem;
-    }
-
-    .timeline-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* PROJECTS */
-    #projects { background: var(--dark); }
-
-    .projects-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(167,139,250,0.3);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-    }
-
-    .project-thumb {
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-thumb-1 { background: linear-gradient(135deg, #7c3aed, #ec4899); }
-    .project-thumb-2 { background: linear-gradient(135deg, #3b82f6, #7c3aed); }
-    .project-thumb-3 { background: linear-gradient(135deg, #ec4899, #f59e0b); }
-    .project-thumb-4 { background: linear-gradient(135deg, #10b981, #3b82f6); }
-    .project-thumb-5 { background: linear-gradient(135deg, #f59e0b, #ec4899); }
-    .project-thumb-6 { background: linear-gradient(135deg, #8b5cf6, #06b6d4); }
-
-    .project-thumb-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      transition: all 0.3s;
-    }
-
-    .project-card:hover .project-thumb-overlay {
-      background: rgba(0,0,0,0.1);
-      font-size: 3.5rem;
-    }
-
-    .project-body { padding: 1.5rem; }
-
-    .project-type {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--purple-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .project-tag {
-      padding: 0.2rem 0.6rem;
-      background: var(--dark-3);
-      border-radius: 5px;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
-    /* CONTACT */
-    #contact { background: var(--dark-2); }
-
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-link-card {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.25rem 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      text-decoration: none;
-      color: var(--text);
-      transition: all 0.3s;
-    }
-
-    .contact-link-card:hover {
-      border-color: rgba(167,139,250,0.4);
-      transform: translateX(6px);
-      background: var(--surface-2);
-    }
-
-    .contact-link-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .icon-email { background: linear-gradient(135deg, rgba(236,72,153,0.3), rgba(249,168,212,0.1)); }
-    .icon-linkedin { background: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(147,197,253,0.1)); }
-    .icon-github { background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(167,139,250,0.1)); }
-
-    .contact-link-info strong {
-      display: block;
+    .skill-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
       font-weight: 700;
-      font-size: 0.95rem;
+      color: var(--espresso);
+      margin-bottom: 0.5rem;
     }
 
-    .contact-link-info span {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+    .skill-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
     }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-group {
+    .skill-list {
+      list-style: none;
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
     }
 
-    .form-group label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
+    .skill-list li {
+      font-size: 0.85rem;
       color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
-      resize: vertical;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: rgba(124,58,237,0.5);
-      box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+    .skill-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--caramel);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
-    .form-group textarea { min-height: 120px; }
+    /* EDUCATION */
+    #education { background: var(--warm-white); }
 
-    .btn-submit {
-      padding: 0.875rem 1.75rem;
-      background: var(--gradient);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+    .edu-card {
+      background: linear-gradient(135deg, var(--foam) 0%, #fff9f4 100%);
+      border: 1px solid var(--latte);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      box-shadow: 0 4px 24px rgba(44,26,14,0.07);
+    }
+
+    .edu-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--espresso);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .edu-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-bottom: 0.4rem;
+    }
+
+    .edu-content .school {
+      font-size: 1rem;
       font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      align-self: flex-start;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
     }
 
-    .btn-submit:hover {
+    .edu-content p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .edu-meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+
+    .edu-badge {
+      background: var(--warm-white);
+      border: 1px solid var(--mist);
+      border-radius: 8px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* CONTACT */
+    #contact { background: var(--espresso); }
+
+    #contact .section-tag { color: var(--latte); }
+    #contact h2 { color: #fff; }
+    #contact .section-intro { color: rgba(255,255,255,0.6); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .contact-card:hover {
+      background: rgba(255,255,255,0.12);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(124,58,237,0.4);
+    }
+
+    .contact-card-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+
+    .contact-card h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-card p {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #fff;
     }
 
     /* FOOTER */
     footer {
-      background: var(--dark);
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-weight: 800;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: #1a0e06;
+      padding: 2rem;
+      text-align: center;
     }
 
     footer p {
-      color: var(--text-muted);
       font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
     }
 
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--purple-light); }
+    footer span { color: var(--latte); }
 
     /* ANIMATIONS */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
+    .fade-up {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .reveal.visible {
+    .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .about-grid,
-      .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
-
-      .skills-grid,
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 68px; left: 0; right: 0;
-        background: rgba(15,10,30,0.97);
-        backdrop-filter: blur(20px);
-        padding: 1.5rem 2rem;
-        gap: 1.25rem;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links.open a { font-size: 1rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { order: -1; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .edu-card { grid-template-columns: 1fr; text-align: center; }
+      .edu-icon { margin: 0 auto; }
+      .edu-meta { justify-content: center; }
     }
 
     @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
       section { padding: 4rem 1.25rem; }
-      .skills-grid,
-      .projects-grid { grid-template-columns: 1fr; }
-      .hero-ctas { flex-direction: column; align-items: center; }
-      .about-stats { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { flex-direction: column; text-align: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+      .timeline::before { left: 22px; }
+      .timeline-dot { width: 46px; height: 46px; font-size: 1.2rem; }
+      .timeline-card { padding: 1.25rem; }
+      .edu-card { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">SM</div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Samara Mehta</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-
-  <div class="hero-content">
-    <div class="hero-badge">Available for freelance &amp; full-time</div>
-    <h1 class="hero-name">
-      <span class="hero-name-gradient">Samara</span><br />Mehta
-    </h1>
-    <p class="hero-tagline">
-      <strong>Designer &amp; Developer</strong> crafting digital experiences<br />
-      that are beautiful, functional, and human-centered.
-    </p>
-    <div class="hero-ctas">
-      <a href="#projects" class="btn-primary">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-        View My Work
-      </a>
-      <a href="#contact" class="btn-secondary">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Get In Touch
-      </a>
-    </div>
-  </div>
-
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="about-card">
-          <div class="about-avatar">&#10022;</div>
-          <div style="font-size:1.1rem;font-weight:700;margin-bottom:0.25rem;">Samara Mehta</div>
-          <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.25rem;">Designer &middot; Developer &middot; Coffee Enthusiast</div>
-          <div style="font-size:0.84rem;color:var(--text-muted);line-height:1.7;">
-            Blending visual intuition with technical depth to build things that look as good as they work.
-          </div>
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-number">15+</div>
-              <div class="stat-label">Projects Shipped</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">3+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">&#8734;</div>
-              <div class="stat-label">Coffees Consumed</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Passion for Craft</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-text">
-        <div class="section-label reveal">About Me</div>
-        <h2 class="section-title reveal reveal-delay-1">
-          Where design meets <span class="grad-text">code</span>
-        </h2>
-        <p class="reveal reveal-delay-2">
-          I'm <strong>Samara</strong> &mdash; a creative designer and front-end developer who believes that the best digital products live at the intersection of aesthetics and engineering. Every pixel matters, and so does every line of code.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge"><span>☕</span> Hospitality Professional</div>
+        <h1>Crafting <em>Experiences</em>, One Cup at a Time</h1>
+        <p class="hero-sub">
+          From pulling espresso shots to leading teams — Samara Mehta brings warmth, precision, and leadership to every role in food & hospitality.
         </p>
-        <p class="reveal reveal-delay-3">
-          My background spans both <strong>visual design</strong> (Figma, Adobe Creative Suite) and <strong>modern web development</strong> (React, Tailwind, JavaScript). Whether I'm crafting a brand identity, wireframing a user flow, or building a responsive web app, I bring the same meticulous attention to detail to everything I do.
-        </p>
-        <p class="reveal reveal-delay-4">
-          Beyond screens, I pull real-world empathy from my time as a <strong>barista</strong> &mdash; learning that great experiences are about reading people, solving problems quickly, and never skimping on quality.
-        </p>
-        <div class="about-tags reveal reveal-delay-5">
-          <span class="tag">Design Thinking</span>
-          <span class="tag">User Research</span>
-          <span class="tag">Prototyping</span>
-          <span class="tag">Front-End Dev</span>
-          <span class="tag">Brand Identity</span>
-          <span class="tag">Motion Design</span>
+        <div class="hero-ctas">
+          <a href="#experience" class="btn-primary">View My Journey</a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div style="text-align:center;max-width:560px;margin:0 auto 0.5rem;">
-      <div class="section-label reveal" style="justify-content:center;">Skills &amp; Tools</div>
-      <h2 class="section-title reveal reveal-delay-1">Everything I bring<br />to the <span class="grad-text">table</span></h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card reveal reveal-delay-1">
-        <div class="skill-icon skill-icon-design">&#127912;</div>
-        <div class="skill-title">Design</div>
-        <div class="skill-desc">Visual storytelling through thoughtful interface design and brand systems.</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Adobe XD</span>
-          <span class="skill-pill">Illustrator</span>
-          <span class="skill-pill">Photoshop</span>
-          <span class="skill-pill">Prototyping</span>
-          <span class="skill-pill">UI/UX</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal reveal-delay-2">
-        <div class="skill-icon skill-icon-dev">&#128187;</div>
-        <div class="skill-title">Development</div>
-        <div class="skill-desc">Building fast, accessible, and maintainable products from design to deployment.</div>
-        <div class="skill-pills">
-          <span class="skill-pill">HTML/CSS</span>
-          <span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">React</span>
-          <span class="skill-pill">Tailwind</span>
-          <span class="skill-pill">Git</span>
-          <span class="skill-pill">Responsive</span>
-        </div>
-      </div>
-
-      <div class="skill-card reveal reveal-delay-3">
-        <div class="skill-icon skill-icon-cx">&#129309;</div>
-        <div class="skill-title">Customer Experience</div>
-        <div class="skill-desc">Empathy-driven collaboration and leadership that keeps people and projects moving.</div>
-        <div class="skill-pills">
-          <span class="skill-pill">Communication</span>
-          <span class="skill-pill">Problem Solving</span>
-          <span class="skill-pill">Team Leadership</span>
-          <span class="skill-pill">Client Management</span>
-          <span class="skill-pill">Agile</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="section-label reveal">Experience &amp; Education</div>
-    <h2 class="section-title reveal reveal-delay-1">My <span class="grad-text">journey</span> so far</h2>
-    <p class="section-sub reveal reveal-delay-2" style="margin-bottom:0;">Each role has shaped how I think, design, and build.</p>
-
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">Freelance Web Designer</div>
-            <div class="timeline-period">2023 &mdash; Present</div>
+      <div class="hero-visual">
+        <div class="hero-stat-grid">
+          <div class="stat-card">
+            <div class="num">4+</div>
+            <div class="label">Years in Hospitality</div>
           </div>
-          <div class="timeline-company">Self-Employed &middot; Remote</div>
-          <div class="timeline-desc">
-            Designing and developing custom websites and digital brand identities for small businesses and entrepreneurs. Handling the full project lifecycle from discovery calls and wireframing through to live deployment, with a strong focus on mobile-first, performant interfaces that convert.
+          <div class="stat-card">
+            <div class="num">3</div>
+            <div class="label">Roles Progressed</div>
           </div>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal reveal-delay-1">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">Barista &amp; Team Lead</div>
-            <div class="timeline-period">2022 &mdash; 2024</div>
+          <div class="stat-card accent-card">
+            <div class="coffee-icon">🎓</div>
+            <div>
+              <div class="num">UMass Amherst</div>
+              <div class="label">B.S. Kinesiology — currently studying</div>
+            </div>
           </div>
-          <div class="timeline-company">CAFE'INN &middot; On-site</div>
-          <div class="timeline-desc">
-            Started as a barista and grew into a team lead role, managing daily operations and training new staff. Developed sharp customer empathy, composure under pressure, and an obsession with quality &mdash; skills that translate directly into how I approach design and client relationships.
+          <div class="stat-card">
+            <div class="num">100s</div>
+            <div class="label">Customers Served Daily</div>
           </div>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal reveal-delay-2">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">Bachelor of Design (UX / Interaction)</div>
-            <div class="timeline-period">2021 &mdash; 2025</div>
-          </div>
-          <div class="timeline-company">University &middot; Design &amp; Technology Faculty</div>
-          <div class="timeline-desc">
-            Studying the intersection of design, technology, and human behaviour. Coursework covers interaction design, design systems, front-end engineering, typography, and user research methodologies. Active member of the design club and student tech community.
+          <div class="stat-card">
+            <div class="num">☕</div>
+            <div class="label">Barista → Asst. Manager</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="projects-header">
-      <div>
-        <div class="section-label reveal">Featured Work</div>
-        <h2 class="section-title reveal reveal-delay-1">Projects I'm <span class="grad-text">proud of</span></h2>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <p class="section-tag">About Me</p>
+      <h2>Hospitality is a craft,<br />not just a job.</h2>
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <p>
+            I'm <strong>Samara Mehta</strong>, a hospitality professional and kinesiology student at the University of Massachusetts Amherst. My journey in food service began behind an espresso machine and has grown into leading teams, managing operations, and creating the kind of guest experiences that keep people coming back.
+          </p>
+          <p>
+            What started as a love for coffee quickly became a passion for the entire hospitality ecosystem — the rhythm of a busy café, the satisfaction of a perfectly crafted order, and the challenge of keeping a team motivated through the rush.
+          </p>
+          <p>
+            My background in <strong>kinesiology</strong> sharpens my understanding of how people move, work, and perform — making me a more effective team leader and a more thoughtful operator.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Team Leadership</span>
+            <span class="tag">Customer Service</span>
+            <span class="tag">Café Operations</span>
+            <span class="tag">Training & Mentoring</span>
+            <span class="tag">Inventory Management</span>
+            <span class="tag">Conflict Resolution</span>
+          </div>
+        </div>
+        <div class="about-highlight fade-up">
+          <div class="highlight-item">
+            <div class="highlight-icon">☕</div>
+            <div class="highlight-text">
+              <h4>Started as a Barista</h4>
+              <p>Mastered espresso technique, latte art, and the science of a perfect brew — building a loyal customer base from day one.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">📋</div>
+            <div class="highlight-text">
+              <h4>Grew into Management</h4>
+              <p>Took on increasing responsibility — scheduling, inventory, training new staff, and keeping operations smooth during peak hours.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🤝</div>
+            <div class="highlight-text">
+              <h4>Guest-First Philosophy</h4>
+              <p>Believe that every interaction is an opportunity to make someone's day better — whether it's their first visit or their hundredth.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🎓</div>
+            <div class="highlight-text">
+              <h4>Academic Foundation</h4>
+              <p>Pursuing Kinesiology at UMass Amherst — applying science of human movement to build stronger, healthier teams.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="https://github.com/theexxby-prog" target="_blank" rel="noopener" class="btn-secondary reveal reveal-delay-2" style="font-size:0.875rem;">
-        All Projects &#8594;
-      </a>
     </div>
+  </section>
 
-    <div class="projects-grid">
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <p class="section-tag">Career Journey</p>
+      <h2>From first shift to<br />running the floor.</h2>
+      <p class="section-intro">A progression built on consistency, care, and a genuine love for the hospitality industry.</p>
 
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb project-thumb-1">
-          <div class="project-thumb-overlay">&#128722;</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">UI Design &middot; Development</div>
-          <div class="project-title">Bloom &mdash; E-Commerce Redesign</div>
-          <div class="project-desc">A full redesign of an artisan plant shop's e-commerce experience. Boosted conversion by focusing on product storytelling, accessibility, and a warm, editorial visual language.</div>
-          <div class="project-tags">
-            <span class="project-tag">Figma</span>
-            <span class="project-tag">React</span>
-            <span class="project-tag">Tailwind</span>
+      <div class="timeline">
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot current">☕</div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">Assistant Manager</div>
+              <div class="timeline-period">Current Role</div>
+            </div>
+            <div class="timeline-company">CAFE'INN</div>
+            <p class="timeline-desc">
+              Promoted to assistant manager after demonstrating consistent performance and natural leadership ability. Now responsible for day-to-day operations, staff coordination, and maintaining the quality standards that define the CAFE'INN experience.
+            </p>
+            <ul class="timeline-bullets">
+              <li>Oversee daily opening and closing procedures, ensuring smooth operations from first cup to last</li>
+              <li>Manage staff scheduling, balancing business needs with team wellbeing</li>
+              <li>Handle inventory ordering, supplier coordination, and waste reduction</li>
+              <li>Train and onboard new baristas, setting them up for success from day one</li>
+              <li>Resolve customer concerns promptly and professionally, turning problems into loyalty</li>
+              <li>Collaborate with ownership on menu updates and seasonal promotions</li>
+            </ul>
+            <div class="skills-chips">
+              <span class="chip">Operations Management</span>
+              <span class="chip">Staff Scheduling</span>
+              <span class="chip">Inventory Control</span>
+              <span class="chip">Training</span>
+              <span class="chip">Guest Relations</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-thumb project-thumb-2">
-          <div class="project-thumb-overlay">&#128242;</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">Mobile App Design</div>
-          <div class="project-title">Moodly &mdash; Wellness Tracker App</div>
-          <div class="project-desc">Designed an iOS mood-tracking app from concept to high-fidelity prototype. Focused on gentle micro-interactions and habit-forming UI patterns to encourage daily engagement.</div>
-          <div class="project-tags">
-            <span class="project-tag">Figma</span>
-            <span class="project-tag">Prototyping</span>
-            <span class="project-tag">User Research</span>
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot">👥</div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">Senior Barista & Team Lead</div>
+              <div class="timeline-period">2023 – 2024</div>
+            </div>
+            <div class="timeline-company">CAFE'INN</div>
+            <p class="timeline-desc">
+              Bridged the gap between barista craft and management responsibility. Led the floor team during peak shifts, mentored junior staff, and took ownership of quality control across all drink preparation.
+            </p>
+            <ul class="timeline-bullets">
+              <li>Led a team of 4–6 baristas during high-volume morning and weekend rushes</li>
+              <li>Maintained drink quality consistency across the full menu, including seasonal specials</li>
+              <li>Created training guides and cheat sheets used by all new hires</li>
+              <li>Fielded escalated customer concerns when management was unavailable</li>
+              <li>Assisted with end-of-day cash reconciliation and inventory counts</li>
+            </ul>
+            <div class="skills-chips">
+              <span class="chip">Team Leadership</span>
+              <span class="chip">Quality Control</span>
+              <span class="chip">Mentoring</span>
+              <span class="chip">Cash Handling</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-thumb project-thumb-3">
-          <div class="project-thumb-overlay">&#10024;</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">Brand Identity &middot; Web</div>
-          <div class="project-title">Auric &mdash; Luxury Skincare Brand</div>
-          <div class="project-desc">Built end-to-end brand identity for a startup skincare label &mdash; logo, color system, packaging concepts, and a landing page with bold editorial typography and smooth scroll animations.</div>
-          <div class="project-tags">
-            <span class="project-tag">Illustrator</span>
-            <span class="project-tag">HTML/CSS</span>
-            <span class="project-tag">JavaScript</span>
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot">✨</div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-title">Barista</div>
+              <div class="timeline-period">2022 – 2023</div>
+            </div>
+            <div class="timeline-company">CAFE'INN</div>
+            <p class="timeline-desc">
+              Joined CAFE'INN as a barista and quickly became known for efficiency, a warm presence, and a genuine curiosity about coffee craft. Built strong relationships with regulars and became a trusted part of the team.
+            </p>
+            <ul class="timeline-bullets">
+              <li>Prepared and served espresso beverages, teas, and specialty drinks to exacting standards</li>
+              <li>Learned latte art and consistently received positive feedback from customers</li>
+              <li>Maintained cleanliness and health code compliance across all stations</li>
+              <li>Memorized regular customers' orders, creating a personal, welcoming atmosphere</li>
+              <li>Handled POS transactions accurately during high-volume service periods</li>
+            </ul>
+            <div class="skills-chips">
+              <span class="chip">Espresso Technique</span>
+              <span class="chip">Latte Art</span>
+              <span class="chip">POS Systems</span>
+              <span class="chip">Customer Service</span>
+              <span class="chip">Food Safety</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card reveal reveal-delay-1">
-        <div class="project-thumb project-thumb-4">
-          <div class="project-thumb-overlay">&#128202;</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">Dashboard Design</div>
-          <div class="project-title">PulseBoard &mdash; Analytics Dashboard</div>
-          <div class="project-desc">Designed a SaaS analytics dashboard that surfaces complex data clearly. Applied information hierarchy principles and dark-mode aesthetics to make dense data feel approachable.</div>
-          <div class="project-tags">
-            <span class="project-tag">Figma</span>
-            <span class="project-tag">Adobe XD</span>
-            <span class="project-tag">Design System</span>
-          </div>
-        </div>
       </div>
-
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-thumb project-thumb-5">
-          <div class="project-thumb-overlay">&#127891;</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">Web App &middot; Development</div>
-          <div class="project-title">StudyDeck &mdash; Flashcard Platform</div>
-          <div class="project-desc">A React-based spaced-repetition flashcard app built for university students. Features custom card decks, a progress tracker, and a clean, distraction-free study interface.</div>
-          <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">CSS</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-thumb project-thumb-6">
-          <div class="project-thumb-overlay">&#9749;</div>
-        </div>
-        <div class="project-body">
-          <div class="project-type">Web Design &middot; Branding</div>
-          <div class="project-title">CAFE'INN &mdash; Digital Presence</div>
-          <div class="project-desc">Redesigned the digital presence for CAFE'INN, including a new website, menu interface, and social media visual system. Increased foot traffic through a warmer, more story-driven brand voice.</div>
-          <div class="project-tags">
-            <span class="project-tag">Figma</span>
-            <span class="project-tag">Photoshop</span>
-            <span class="project-tag">HTML/CSS</span>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div style="text-align:center;max-width:560px;margin:0 auto 3.5rem;">
-      <div class="section-label reveal" style="justify-content:center;">Get In Touch</div>
-      <h2 class="section-title reveal reveal-delay-1">Let's build something <span class="grad-text">together</span></h2>
-      <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">
-        Whether you have a project idea, want to collaborate, or just want to say hi &mdash; my inbox is always open.
-      </p>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-tag">What I Bring</p>
+      <h2>Skills sharpened in<br />real environments.</h2>
+      <p class="section-intro">Every capability below was earned on the floor — not in a classroom.</p>
+
+      <div class="skills-grid">
+        <div class="skill-card fade-up">
+          <div class="skill-icon">☕</div>
+          <h3>Coffee Craft</h3>
+          <p>Trained across the full spectrum of espresso-based and specialty beverages.</p>
+          <ul class="skill-list">
+            <li>Espresso extraction & dialing</li>
+            <li>Latte art (free-pour & etching)</li>
+            <li>Cold brew & nitro prep</li>
+            <li>Tea & alternative milk knowledge</li>
+            <li>Seasonal menu development</li>
+          </ul>
+        </div>
+        <div class="skill-card fade-up">
+          <div class="skill-icon">📋</div>
+          <h3>Operations</h3>
+          <p>Hands-on experience running a busy café from open to close.</p>
+          <ul class="skill-list">
+            <li>Opening & closing procedures</li>
+            <li>Inventory & ordering</li>
+            <li>Staff scheduling</li>
+            <li>Cash handling & reconciliation</li>
+            <li>Health & safety compliance</li>
+          </ul>
+        </div>
+        <div class="skill-card fade-up">
+          <div class="skill-icon">🤝</div>
+          <h3>Guest Experience</h3>
+          <p>Building loyalty through every interaction, every single day.</p>
+          <ul class="skill-list">
+            <li>Complaint resolution</li>
+            <li>Building customer rapport</li>
+            <li>High-volume service</li>
+            <li>Accessibility & inclusivity</li>
+            <li>Feedback implementation</li>
+          </ul>
+        </div>
+        <div class="skill-card fade-up">
+          <div class="skill-icon">👥</div>
+          <h3>Team Leadership</h3>
+          <p>Motivating and developing a team under pressure.</p>
+          <ul class="skill-list">
+            <li>Onboarding & training</li>
+            <li>Shift management</li>
+            <li>Conflict resolution</li>
+            <li>Performance feedback</li>
+            <li>Morale & culture building</li>
+          </ul>
+        </div>
+        <div class="skill-card fade-up">
+          <div class="skill-icon">🧠</div>
+          <h3>Kinesiology Knowledge</h3>
+          <p>Applying movement science to create a healthier workplace.</p>
+          <ul class="skill-list">
+            <li>Ergonomics & injury prevention</li>
+            <li>Physical performance awareness</li>
+            <li>Wellness-conscious scheduling</li>
+            <li>Human anatomy fundamentals</li>
+          </ul>
+        </div>
+        <div class="skill-card fade-up">
+          <div class="skill-icon">⚡</div>
+          <h3>Adaptability</h3>
+          <p>Thriving in fast-paced, unpredictable environments.</p>
+          <ul class="skill-list">
+            <li>Rush-hour composure</li>
+            <li>Multi-tasking under pressure</li>
+            <li>Quick problem solving</li>
+            <li>Cross-training flexibility</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <a href="mailto:hello@samaramehta.com" class="contact-link-card reveal">
-          <div class="contact-link-icon icon-email">&#9993;&#65039;</div>
-          <div class="contact-link-info">
-            <strong>Email Me</strong>
-            <span>hello@samaramehta.com</span>
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-tag">Education</p>
+      <h2>Building the science<br />behind the practice.</h2>
+      <div class="edu-card fade-up">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-content">
+          <h3>Bachelor of Science — Kinesiology</h3>
+          <div class="school">University of Massachusetts Amherst</div>
+          <p>
+            Studying the science of human movement, physical performance, and health — disciplines that directly inform how I lead teams, design shift structures, and think about employee wellbeing in high-demand hospitality environments.
+          </p>
+          <div class="edu-meta">
+            <span class="edu-badge">📍 Amherst, MA</span>
+            <span class="edu-badge">🕐 Currently Enrolled</span>
+            <span class="edu-badge">🏃 Kinesiology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-tag">Let's Connect</p>
+      <h2>Open to new opportunities.</h2>
+      <p class="section-intro">Whether it's a management role, a hospitality project, or just a great conversation — reach out.</p>
+      <div class="contact-grid">
+        <a href="mailto:samara@mehtahouse.cc" class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>samara@mehtahouse.cc</p>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/samara-mehta-13272528a/" target="_blank" rel="noopener" class="contact-link-card reveal reveal-delay-1">
-          <div class="contact-link-icon icon-linkedin">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#60a5fa"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <div class="contact-link-info">
-            <strong>LinkedIn</strong>
-            <span>samara-mehta-13272528a</span>
+        <a href="https://www.linkedin.com/in/samara-mehta-13272528a/" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon">💼</div>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>samara-mehta-13272528a</p>
           </div>
         </a>
-        <a href="https://github.com/theexxby-prog" target="_blank" rel="noopener" class="contact-link-card reveal reveal-delay-2">
-          <div class="contact-link-icon icon-github">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </div>
-          <div class="contact-link-info">
-            <strong>GitHub</strong>
-            <span>theexxby-prog</span>
+        <a href="https://github.com/theexxby-prog" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon">💻</div>
+          <div>
+            <h4>GitHub</h4>
+            <p>theexxby-prog</p>
           </div>
         </a>
       </div>
-
-      <form class="contact-form reveal reveal-delay-1" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Alex Johnson" required />
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="alex@example.com" required />
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="Project collaboration, freelance inquiry..." />
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell me about your project or just say hello..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Send Message &#8594;</button>
-      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Samara Mehta</div>
-    <p>&copy; 2025 Samara Mehta. Designed &amp; built with love.</p>
-    <div class="footer-links">
-      <a href="https://github.com/theexxby-prog" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/samara-mehta-13272528a/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>Samara Mehta</span> — Crafted with care ☕</p>
+  </footer>
 
-<script>
-  // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.12 });
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Nav active highlight on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 120) {
-        current = section.getAttribute('id');
-      }
-    });
-    navItems.forEach(link => {
-      link.style.color = '';
-      if (link.getAttribute('href') === '#' + current) {
-        link.style.color = 'var(--text)';
-      }
-    });
-  });
-
-  // Form submit demo
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-submit');
-    btn.textContent = 'Message Sent! \u2713';
-    btn.style.background = 'linear-gradient(135deg, #10b981, #3b82f6)';
-    setTimeout(() => {
-      btn.textContent = 'Send Message \u2192';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
-  }
-</script>
-
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
