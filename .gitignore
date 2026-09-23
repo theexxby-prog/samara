@@ -4,3 +4,11 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# macOS / editors / local tools
+.DS_Store
+.claude/
+node_modules/
+dist/
+*.zip
+.vercel/

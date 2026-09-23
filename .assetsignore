@@ -1,0 +1,7 @@
+# The Worker serves this folder as the site. Keep repo plumbing off the web.
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+.DS_Store
+.claude
