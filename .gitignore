@@ -7,8 +7,9 @@
 
 # macOS / editors / local tools
 .DS_Store
-.claude/
 node_modules/
 dist/
 *.zip
 .vercel/
+.claude/settings.local.json
+.claude/.last-deploy
