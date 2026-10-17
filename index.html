@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samara Mehta</title>
   <meta name="description" content="Samara Mehta: kinesiology student at UMass Amherst, certified EMT-B, physical therapy aide. Seeking an entry-level clinical role in rehabilitation or hospital care." />
+  <link rel="canonical" href="https://samara.mehtahouse.cc/" />
+  <meta name="theme-color" content="#f3efe7" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-64.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <!-- Link preview when the URL is pasted into LinkedIn, iMessage, email or an application form -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Samara Mehta" />
+  <meta property="og:title" content="Samara Mehta" />
+  <meta property="og:description" content="Kinesiology student at UMass Amherst. Certified EMT. Seeking an entry-level clinical role in the New York and New Jersey area." />
+  <meta property="og:url" content="https://samara.mehtahouse.cc/" />
+  <meta property="og:image" content="https://samara.mehtahouse.cc/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Samara Mehta, kinesiology student at UMass Amherst and certified EMT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Samara Mehta" />
+  <meta name="twitter:description" content="Kinesiology student at UMass Amherst. Certified EMT. Seeking an entry-level clinical role in the New York and New Jersey area." />
+  <meta name="twitter:image" content="https://samara.mehtahouse.cc/og.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -736,10 +755,6 @@
       pointer-events: none;
     }
 
-    .avail { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; position: relative; }
-    .avail span { font-size: 0.8rem; font-weight: 600; color: #fff; background: rgba(255,255,255,0.08); border: 1px solid rgba(230,183,151,0.45); padding: 0.45rem 0.9rem; border-radius: 99px; transition: transform 0.2s var(--ease), background 0.2s; }
-    .avail span:hover { transform: translateY(-2px); background: rgba(230,183,151,0.18); }
-    .avail b { color: #e6b797; font-weight: 600; }
 
     .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2rem; max-width: 760px; position: relative; }
 
@@ -809,9 +824,81 @@
       .edu { padding: 2rem 1.5rem; }
       .edu-icon { width: 64px; height: 64px; font-size: 2rem; }
     }
+
+    /* ICONS (inline SVG line icons, sized by each container's font-size) */
+    .ico { width: 1.15em; height: 1.15em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; display: block; }
+    .badge-icon { color: var(--copper); }
+    .hl-icon { color: var(--forest); }
+    .t-dot { color: var(--forest); }
+    .t-dot.current { color: #fff; }
+    .skill-icon { color: #e6b797; }
+    .edu-icon { color: #fff; }
+    .contact-icon { color: #e6b797; }
+    .contact-icon .ico { width: 1.3em; height: 1.3em; }
+
+    /* RESUME BUTTONS */
+    .btn-outline { border: 1.5px solid var(--forest); color: var(--forest); background: transparent; }
+    .btn-outline:hover { background: var(--forest); color: #fff; transform: translateY(-3px); box-shadow: 0 10px 22px rgba(31,77,64,0.2); }
+    .btn .ico { width: 1.1em; height: 1.1em; }
+
+    /* FOR HIRING MANAGERS (contact section) */
+    .hire { position: relative; margin-top: 2.25rem; max-width: 960px; background: rgba(255,255,255,0.05); border: 1px solid rgba(230,183,151,0.45); border-radius: 18px; padding: 1.5rem 1.75rem; }
+    .hire-head { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #e6b797; margin-bottom: 1.1rem; }
+    .hire-head .ico { width: 1.4em; height: 1.4em; }
+    .hire dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 1.5rem; }
+    .hire dl > div { min-width: 0; }
+    .hire dt { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+    .hire dd { margin: 0; font-size: 0.95rem; font-weight: 500; color: #fff; line-height: 1.5; }
+    .hire dd a { color: #e6b797; text-decoration: none; border-bottom: 1px solid rgba(230,183,151,0.5); }
+    .hire dd a:hover { border-bottom-color: #e6b797; }
+    .contact-grid { grid-template-columns: repeat(3, 1fr); max-width: 960px; }
+
+    /* CLINICAL HOURS (hidden until Samara supplies the numbers) */
+    .hours-wrap { margin-top: 2.5rem; overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: var(--shadow-sm); }
+    .hours { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-variant-numeric: tabular-nums; min-width: 560px; }
+    .hours th, .hours td { text-align: left; padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--line); }
+    .hours th { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bone); }
+    .hours td.n, .hours th.n { text-align: right; }
+    .hours tbody tr:last-child td { border-bottom: 0; }
+    .hours tfoot td { font-weight: 600; color: var(--ink); background: var(--bone); border-top: 1px solid var(--line); }
+    .hours-note { margin-top: 0.9rem; font-size: 0.82rem; color: var(--muted); }
+
+    /* REFERENCES (hidden until quotes come in with permission) */
+    .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .ref-card { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--sage); border-radius: 0 16px 16px 0; padding: 1.5rem 1.75rem; }
+    .ref-card blockquote { margin: 0 0 0.9rem; font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.5; color: var(--forest); }
+    .ref-card .who { font-size: 0.85rem; color: var(--muted); }
+    .ref-card .who b { display: block; color: var(--ink); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .hire dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+      .ref-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hire { padding: 1.25rem; }
+      .hire dl { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-ambulance" viewBox="0 0 24 24"><path d="M3 16V8.5A1.5 1.5 0 0 1 4.5 7H13v9"/><path d="M13 10h4l3 3v3h-7"/><path d="M3 16h18"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/><path d="M8 9.5v4M6 11.5h4"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.2V16c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.8"/><path d="M22 9v6"/></symbol>
+      <symbol id="i-hospital" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 7v6M9 10h6"/><path d="M9.5 21v-4h5v4"/></symbol>
+      <symbol id="i-rehab" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8"/><path d="M3.5 10v4M20.5 10v4"/><path d="M6 12h12"/></symbol>
+      <symbol id="i-football" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6" transform="rotate(-35 12 12)"/><path d="M9.2 14.8l5.6-5.6"/><path d="M10.6 11.3l1.4 1.4M12.6 9.3l1.4 1.4"/></symbol>
+      <symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M5 3v6a5 5 0 0 0 10 0V3"/><path d="M4 3h2M14 3h2"/><path d="M10 14v2.5a4.5 4.5 0 0 0 9 0V13"/><circle cx="19" cy="10.5" r="2.2"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M9 10h6M9 14h6M9 18h3"/></symbol>
+      <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="m9 13.3-1.8 7 4.8-2.6 4.8 2.6-1.8-7"/><path d="m10 9 1.4 1.4L14.2 7.6"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7.5 9 6 9-6"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5v2"/><path d="M3 12h18"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h5M10 17h5"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+    </defs>
+  </svg>
 
   <!-- NAV -->
   <nav id="nav">
@@ -823,6 +910,7 @@
       <li><a href="#leadership">Leadership</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf">Resume</a></li>
     </ul>
   </nav>
 
@@ -840,6 +928,7 @@
         </p>
         <div class="ctas rise d5">
           <a href="#experience" class="btn btn-primary">See my experience <span class="arrow">→</span></a>
+          <a href="/Samara-Mehta-Resume.pdf" class="btn btn-outline" download="Samara-Mehta-Resume.pdf"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Resume (PDF)</a>
           <a href="#contact" class="btn-link">Email me</a>
         </div>
         <div class="meta rise d6">
@@ -855,11 +944,11 @@
           <img src="photo.webp" alt="Samara Mehta" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" />
         </div>
         <div class="badge">
-          <div class="badge-icon">🚑</div>
+          <div class="badge-icon"><svg class="ico" aria-hidden="true"><use href="#i-ambulance"/></svg></div>
           <div><b>EMT-Basic</b><span>National Registry</span></div>
         </div>
         <div class="badge badge-2">
-          <div class="badge-icon">🎓</div>
+          <div class="badge-icon"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></div>
           <div><b>Dean's List</b><span>Spring 2025</span></div>
         </div>
         <div class="ring"></div>
@@ -894,19 +983,19 @@
         </div>
         <div class="highlights">
           <div class="hl fade-up" style="--d: 0.05s">
-            <div class="hl-icon">🏥</div>
+            <div class="hl-icon"><svg class="ico" aria-hidden="true"><use href="#i-hospital"/></svg></div>
             <div><h4>Hospital rotations</h4><p>Trauma Bay, Pediatric Unit, ICU and Burn Unit at Nassau University Medical Center, monitoring vitals and preparing equipment alongside doctors and nurses.</p></div>
           </div>
           <div class="hl fade-up" style="--d: 0.15s">
-            <div class="hl-icon">🦵</div>
+            <div class="hl-icon"><svg class="ico" aria-hidden="true"><use href="#i-rehab"/></svg></div>
             <div><h4>Outpatient rehab</h4><p>Therapeutic exercise, modalities (hot/cold packs, e-stim) and front-desk intake as a PT aide in Hoboken.</p></div>
           </div>
           <div class="hl fade-up" style="--d: 0.25s">
-            <div class="hl-icon">🏈</div>
+            <div class="hl-icon"><svg class="ico" aria-hidden="true"><use href="#i-football"/></svg></div>
             <div><h4>Division I athletics</h4><p>Injury prevention, taping and bracing, and cryotherapy, heat and pneumatic compression for LIU football.</p></div>
           </div>
           <div class="hl fade-up" style="--d: 0.35s">
-            <div class="hl-icon">🚑</div>
+            <div class="hl-icon"><svg class="ico" aria-hidden="true"><use href="#i-ambulance"/></svg></div>
             <div><h4>EMT-Basic</h4><p>Certified through the National Registry of Emergency Medical Technicians. CPR, AED and BLS current.</p></div>
           </div>
         </div>
@@ -924,7 +1013,7 @@
       <div class="timeline" id="timeline">
 
         <div class="t-item slide-in">
-          <div class="t-dot current">🦵</div>
+          <div class="t-dot current"><svg class="ico" aria-hidden="true"><use href="#i-rehab"/></svg></div>
           <div class="t-card">
             <div class="t-head">
               <div class="t-title">Physical Therapy Aide</div>
@@ -942,7 +1031,7 @@
         </div>
 
         <div class="t-item slide-in" style="--d: 0.1s">
-          <div class="t-dot">🏥</div>
+          <div class="t-dot"><svg class="ico" aria-hidden="true"><use href="#i-hospital"/></svg></div>
           <div class="t-card">
             <div class="t-head">
               <div class="t-title">EMT Student Intern</div>
@@ -959,7 +1048,7 @@
         </div>
 
         <div class="t-item slide-in" style="--d: 0.1s">
-          <div class="t-dot">🏈</div>
+          <div class="t-dot"><svg class="ico" aria-hidden="true"><use href="#i-football"/></svg></div>
           <div class="t-card">
             <div class="t-head">
               <div class="t-title">Summer Intern, Athletic Training</div>
@@ -983,6 +1072,47 @@
     </div>
   </section>
 
+  <!-- CLINICAL HOURS. Hidden until Samara supplies hours per setting (PTCAS counts them, clinics like seeing them tracked).
+       To publish: fill the four numbers and supervisor names below, then remove the `hidden` attribute and the nav gets a "Hours" link. -->
+  <section id="hours" hidden>
+    <div class="section-inner">
+      <p class="section-tag fade-up">Clinical hours</p>
+      <h2 class="fade-up">Hours logged,<br /><em>by setting.</em></h2>
+      <p class="section-intro fade-up">Tracked per setting the way a DPT application asks for them.</p>
+      <div class="hours-wrap fade-up">
+        <table class="hours">
+          <thead><tr><th>Setting</th><th>Site</th><th>Supervisor</th><th class="n">Hours</th></tr></thead>
+          <tbody>
+            <tr><td>Outpatient orthopedic</td><td>Nee's Physical Therapy, Hoboken, NJ</td><td>TODO name, PT, DPT</td><td class="n">TODO</td></tr>
+            <tr><td>Acute care</td><td>Nassau University Medical Center, East Meadow, NY</td><td>TODO name</td><td class="n">TODO</td></tr>
+            <tr><td>Sports medicine</td><td>Long Island University Athletics, Brookville, NY</td><td>TODO name, ATC</td><td class="n">TODO</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="3">Total documented hours</td><td class="n">TODO</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="hours-note fade-up">Verification available on request.</p>
+    </div>
+  </section>
+
+  <!-- REFERENCES. Hidden until one or two supervisors give a sentence with permission to quote them.
+       To publish: replace the TODO text, then remove the `hidden` attribute. -->
+  <section id="references" hidden>
+    <div class="section-inner">
+      <p class="section-tag fade-up">References</p>
+      <h2 class="fade-up">In their words.</h2>
+      <div class="ref-grid">
+        <div class="ref-card fade-up" style="--d: 0.05s">
+          <blockquote>TODO one or two sentences from the supervising PT, quoted with permission.</blockquote>
+          <div class="who"><b>TODO Name, PT, DPT</b>Nee's Physical Therapy, Hoboken, NJ</div>
+        </div>
+        <div class="ref-card fade-up" style="--d: 0.18s">
+          <blockquote>TODO one or two sentences from the head athletic trainer, quoted with permission.</blockquote>
+          <div class="who"><b>TODO Name, ATC</b>Long Island University Athletics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
@@ -991,7 +1121,7 @@
 
       <div class="skills-grid">
         <div class="skill-card fade-up" style="--d: 0.05s">
-          <div class="skill-icon">🩺</div>
+          <div class="skill-icon"><svg class="ico" aria-hidden="true"><use href="#i-stethoscope"/></svg></div>
           <h3>Clinical</h3>
           <p>Hands-on skills from the clinic, the hospital and the training room.</p>
           <ul class="skill-list">
@@ -1006,7 +1136,7 @@
           </ul>
         </div>
         <div class="skill-card fade-up" style="--d: 0.18s">
-          <div class="skill-icon">📋</div>
+          <div class="skill-icon"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
           <h3>Technical</h3>
           <p>Charting, scheduling and the office side of a clinic.</p>
           <ul class="skill-list">
@@ -1018,7 +1148,7 @@
           </ul>
         </div>
         <div class="skill-card fade-up" style="--d: 0.31s">
-          <div class="skill-icon">✅</div>
+          <div class="skill-icon"><svg class="ico" aria-hidden="true"><use href="#i-cert"/></svg></div>
           <h3>Certifications and languages</h3>
           <p>Current credentials and the languages I can take a patient history in.</p>
           <ul class="skill-list">
@@ -1065,7 +1195,7 @@
       <p class="section-tag fade-up">Education</p>
       <h2 class="fade-up">Bachelor of Science,<br /><em>Kinesiology.</em></h2>
       <div class="edu fade-up">
-        <div class="edu-icon">🎓</div>
+        <div class="edu-icon"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></div>
         <div>
           <h3>University of Massachusetts Amherst</h3>
           <div class="school">School of Public Health and Health Sciences · Amherst, MA</div>
@@ -1098,19 +1228,29 @@
       <p class="section-tag fade-up">Contact</p>
       <h2 class="fade-up">Looking for an <em>entry-level clinical role.</em></h2>
       <p class="section-intro fade-up">Rehabilitation, outpatient PT, or hospital care, in the New York and New Jersey area. Based in Jersey City, NJ.</p>
-      <div class="avail fade-up" style="--d: 0.1s">
-        <span><b>Available</b> from May 2027</span>
-        <span><b>Days</b> all seven</span>
-        <span><b>Commute</b> up to about 40 minutes from Jersey City</span>
+      <div class="hire fade-up" style="--d: 0.1s">
+        <div class="hire-head"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg>For hiring managers</div>
+        <dl>
+          <div><dt>Available</dt><dd>From May 2027, when school ends</dd></div>
+          <div><dt>Days</dt><dd>Any day of the week, all seven</dd></div>
+          <div><dt>Commute</dt><dd>Up to about 40 minutes from Jersey City, NJ</dd></div>
+          <div><dt>Certifications</dt><dd>EMT-Basic (NREMT), CPR and AED</dd></div>
+          <div><dt>Languages</dt><dd>English and Hindi, fluent. Spanish, conversational</dd></div>
+          <div><dt>Resume</dt><dd><a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf">Download the PDF</a> (email contact only, no phone)</dd></div>
+        </dl>
       </div>
       <div class="contact-grid">
         <a href="mailto:samara.mehta@gmail.com" class="contact-card fade-up" style="--d: 0.05s">
-          <div class="contact-icon">✉️</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></div>
           <div><h4>Email</h4><p>samara.mehta@gmail.com</p></div>
         </a>
         <a href="https://www.linkedin.com/in/samara-mehta" target="_blank" rel="noopener" class="contact-card fade-up" style="--d: 0.18s">
-          <div class="contact-icon">💼</div>
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
           <div><h4>LinkedIn</h4><p>linkedin.com/in/samara-mehta</p></div>
+        </a>
+        <a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf" class="contact-card fade-up" style="--d: 0.31s">
+          <div class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg></div>
+          <div><h4>Resume</h4><p>Resume (PDF)</p></div>
         </a>
       </div>
     </div>
