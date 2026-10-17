@@ -71,5 +71,11 @@ _Updated 2026-10-17 from the Mac (rebuilt the site around the Sept 2026 resume).
 - **Local preview:** `python3 -m http.server` on the folder (registered as `samara-site` in
   `~/dev/.claude/launch.json`); tested desktop and 375px phone widths on 2026-10-17.
 - **Not deployed yet:** nothing after this push.
-- **Open / next:** confirm the three assumptions above with Samara; a Samara-approved photo
-  for the hero would help.
+- **Opening redesign in progress (2026-10-17):** Samara wasn't happy with the hero. Round 1
+  Lab (four looks, Claude artifact "Samara Opening Lab"): she picked A "Clinic" for layout,
+  colors and fonts but called the headline "Kinesiology student, EMT, future physical
+  therapist." cringe; she also liked C "Minimal". Round 2 artifact "Samara Opening Round 2"
+  offers A1/A2 (Clinic) and C1/C2 (Minimal) with quieter headlines plus a headline list.
+  Waiting on her round-2 picks and a portrait photo; then rebuild the hero in `index.html`.
+- **Open / next:** round-2 picks; the photo; confirm "Expected graduation 2027" and the
+  LinkedIn link with Samara.
