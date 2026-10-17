@@ -736,7 +736,12 @@
       pointer-events: none;
     }
 
-    .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 3rem; max-width: 760px; position: relative; }
+    .avail { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; position: relative; }
+    .avail span { font-size: 0.8rem; font-weight: 600; color: #fff; background: rgba(255,255,255,0.08); border: 1px solid rgba(230,183,151,0.45); padding: 0.45rem 0.9rem; border-radius: 99px; transition: transform 0.2s var(--ease), background 0.2s; }
+    .avail span:hover { transform: translateY(-2px); background: rgba(230,183,151,0.18); }
+    .avail b { color: #e6b797; font-weight: 600; }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2rem; max-width: 760px; position: relative; }
 
     .contact-card {
       background: rgba(255,255,255,0.06);
@@ -1093,6 +1098,11 @@
       <p class="section-tag fade-up">Contact</p>
       <h2 class="fade-up">Looking for an <em>entry-level clinical role.</em></h2>
       <p class="section-intro fade-up">Rehabilitation, outpatient PT, or hospital care, in the New York and New Jersey area. Based in Jersey City, NJ.</p>
+      <div class="avail fade-up" style="--d: 0.1s">
+        <span><b>Available</b> from May 2027</span>
+        <span><b>Days</b> all seven</span>
+        <span><b>Commute</b> up to about 40 minutes from Jersey City</span>
+      </div>
       <div class="contact-grid">
         <a href="mailto:samara.mehta@gmail.com" class="contact-card fade-up" style="--d: 0.05s">
           <div class="contact-icon">✉️</div>

@@ -71,6 +71,9 @@ _Updated 2026-10-17 from the Mac (opening rebuilt from Samara's final picks; pho
 - **Design history:** Claude artifacts "Samara Opening Lab" (round 1: A Clinic, B Bold, C
   Minimal, D Soft) and "Samara Opening Round 2" (A1, A2, C1, C2 + headline list). Picks:
   A1 everything, headline H3. Keep the look; don't revert to the earlier teal or coffee pages.
+- **Availability (Vishal, 2026-10-17):** from summer 2027 (school ends May 2027) she is free
+  all seven days; commute up to 30 minutes, 35-40 is fine. Shown as three pills in the
+  contact section. Still unknown: part-time availability before May 2027.
 - **Left off the public site on purpose:** phone number, resume PDF.
 - **Still to confirm with Samara:** "Expected graduation 2027" and the LinkedIn link
   `linkedin.com/in/samara-mehta`.
