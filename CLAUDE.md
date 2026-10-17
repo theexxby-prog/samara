@@ -67,7 +67,7 @@ _Updated 2026-10-17 from the Mac (rebuilt the site around the Sept 2026 resume).
   carries the phone). Add a resume download only if Samara wants it public.
 - **Assumptions to confirm with Samara:** "Expected graduation 2027" (Vishal's words, not on
   the resume); LinkedIn link is the resume's `linkedin.com/in/samara-mehta` (the old site used
-  `samara-mehta-13272528a`); email stays `samara@mehtahouse.cc` (resume lists her gmail).
+  `samara-mehta-13272528a`); email is `samara.mehta@gmail.com` (Vishal confirmed 2026-10-17; never use samara@mehtahouse.cc).
 - **Local preview:** `python3 -m http.server` on the folder (registered as `samara-site` in
   `~/dev/.claude/launch.json`); tested desktop and 375px phone widths on 2026-10-17.
 - **Not deployed yet:** nothing after this push.
