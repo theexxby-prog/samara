@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samara Mehta</title>
+  <meta name="description" content="Samara Mehta: kinesiology student at UMass Amherst, certified EMT-B, physical therapy aide. Seeking an entry-level clinical role in rehabilitation or hospital care." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -11,24 +12,24 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #fdf8f3;
-      --warm-white: #fffcf8;
-      --espresso: #2c1a0e;
-      --brown: #6b3f1f;
-      --caramel: #c47d3e;
-      --latte: #d4a96a;
-      --foam: #f5ede0;
-      --mist: #ede8e0;
-      --text: #3a2a1a;
-      --text-light: #7a6a5a;
-      --accent: #b85c2a;
+      --paper: #f7f9f8;
+      --white: #ffffff;
+      --ink: #0f2a33;
+      --deep: #164552;
+      --teal: #1f7a8c;
+      --sea: #5fb3bf;
+      --mint: #e4f1ee;
+      --line: #dde6e4;
+      --text: #223238;
+      --text-light: #5d6f75;
+      --accent: #c9672e;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--cream);
+      background: var(--paper);
       color: var(--text);
       line-height: 1.6;
     }
@@ -38,9 +39,9 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(253, 248, 243, 0.92);
+      background: rgba(247, 249, 248, 0.92);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--mist);
+      border-bottom: 1px solid var(--line);
       padding: 0 2rem;
       height: 64px;
       display: flex;
@@ -52,7 +53,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
       letter-spacing: -0.02em;
     }
 
@@ -70,14 +71,14 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--teal); }
 
     /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(160deg, #fff9f4 0%, #fdf0e0 50%, #f8e8d4 100%);
+      background: linear-gradient(160deg, #ffffff 0%, #eef5f3 55%, #e3eeeb 100%);
       padding: 100px 2rem 4rem;
       position: relative;
       overflow: hidden;
@@ -88,7 +89,7 @@
       position: absolute;
       top: -100px; right: -100px;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(196,125,62,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(31,122,140,0.12) 0%, transparent 70%);
       border-radius: 50%;
     }
 
@@ -97,7 +98,7 @@
       position: absolute;
       bottom: -80px; left: -80px;
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(184,92,42,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(201,103,46,0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
 
@@ -106,7 +107,7 @@
       margin: 0 auto;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 4rem;
       align-items: center;
     }
@@ -115,13 +116,13 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--foam);
-      border: 1px solid var(--latte);
+      background: var(--mint);
+      border: 1px solid var(--sea);
       border-radius: 99px;
       padding: 0.4rem 1rem;
       font-size: 0.8rem;
       font-weight: 500;
-      color: var(--brown);
+      color: var(--deep);
       margin-bottom: 1.5rem;
     }
 
@@ -129,9 +130,9 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-size: clamp(2.6rem, 5vw, 4rem);
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
       line-height: 1.15;
       letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
@@ -139,13 +140,13 @@
 
     h1 em {
       font-style: italic;
-      color: var(--accent);
+      color: var(--teal);
     }
 
     .hero-sub {
       font-size: 1.1rem;
       color: var(--text-light);
-      max-width: 480px;
+      max-width: 520px;
       margin-bottom: 2rem;
       line-height: 1.7;
     }
@@ -157,7 +158,7 @@
     }
 
     .btn-primary {
-      background: var(--espresso);
+      background: var(--ink);
       color: #fff;
       padding: 0.75rem 1.75rem;
       border-radius: 8px;
@@ -167,27 +168,21 @@
       transition: background 0.2s, transform 0.15s;
     }
 
-    .btn-primary:hover { background: var(--brown); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--deep); transform: translateY(-1px); }
 
     .btn-outline {
       background: transparent;
-      color: var(--espresso);
+      color: var(--ink);
       padding: 0.75rem 1.75rem;
       border-radius: 8px;
-      border: 1.5px solid var(--espresso);
+      border: 1.5px solid var(--ink);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 600;
       transition: background 0.2s, transform 0.15s;
     }
 
-    .btn-outline:hover { background: var(--foam); transform: translateY(-1px); }
-
-    .hero-visual {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .btn-outline:hover { background: var(--mint); transform: translateY(-1px); }
 
     .hero-stat-grid {
       display: grid;
@@ -196,20 +191,20 @@
     }
 
     .stat-card {
-      background: var(--warm-white);
-      border: 1px solid var(--mist);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: 16px;
       padding: 1.5rem;
-      box-shadow: 0 2px 12px rgba(44,26,14,0.06);
+      box-shadow: 0 2px 12px rgba(15,42,51,0.06);
     }
 
     .stat-card .num {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
       line-height: 1;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
     }
 
     .stat-card .label {
@@ -219,8 +214,8 @@
     }
 
     .stat-card.accent-card {
-      background: var(--espresso);
-      border-color: var(--espresso);
+      background: var(--ink);
+      border-color: var(--ink);
       grid-column: span 2;
       display: flex;
       align-items: center;
@@ -229,12 +224,10 @@
 
     .stat-card.accent-card .num,
     .stat-card.accent-card .label { color: #fff; }
+    .stat-card.accent-card .num { font-size: 1.5rem; }
     .stat-card.accent-card .label { opacity: 0.7; }
 
-    .coffee-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-    }
+    .stat-icon { font-size: 2rem; flex-shrink: 0; }
 
     /* SECTION SHARED */
     section { padding: 6rem 2rem; }
@@ -246,7 +239,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--teal);
       margin-bottom: 0.75rem;
     }
 
@@ -254,7 +247,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
       letter-spacing: -0.02em;
       line-height: 1.2;
       margin-bottom: 1rem;
@@ -263,12 +256,12 @@
     .section-intro {
       font-size: 1.05rem;
       color: var(--text-light);
-      max-width: 560px;
+      max-width: 600px;
       line-height: 1.75;
     }
 
     /* ABOUT */
-    #about { background: var(--warm-white); }
+    #about { background: var(--white); }
 
     .about-grid {
       display: grid;
@@ -295,9 +288,9 @@
     }
 
     .tag {
-      background: var(--foam);
-      border: 1px solid var(--latte);
-      color: var(--brown);
+      background: var(--mint);
+      border: 1px solid var(--sea);
+      color: var(--deep);
       font-size: 0.8rem;
       font-weight: 500;
       padding: 0.35rem 0.85rem;
@@ -305,10 +298,10 @@
     }
 
     .about-highlight {
-      background: var(--foam);
+      background: var(--mint);
       border-radius: 20px;
       padding: 2rem;
-      border: 1px solid var(--mist);
+      border: 1px solid var(--line);
     }
 
     .highlight-item {
@@ -323,20 +316,20 @@
     .highlight-icon {
       width: 42px;
       height: 42px;
-      background: var(--warm-white);
+      background: var(--white);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.25rem;
       flex-shrink: 0;
-      border: 1px solid var(--mist);
+      border: 1px solid var(--line);
     }
 
     .highlight-text h4 {
       font-weight: 600;
       font-size: 0.95rem;
-      color: var(--espresso);
+      color: var(--ink);
       margin-bottom: 0.2rem;
     }
 
@@ -348,7 +341,7 @@
     }
 
     /* EXPERIENCE */
-    #experience { background: var(--cream); }
+    #experience { background: var(--paper); }
 
     .timeline {
       margin-top: 3.5rem;
@@ -362,7 +355,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(to bottom, var(--latte), var(--mist));
+      background: linear-gradient(to bottom, var(--sea), var(--line));
     }
 
     .timeline-item {
@@ -377,8 +370,8 @@
     .timeline-dot {
       width: 58px;
       height: 58px;
-      background: var(--warm-white);
-      border: 2px solid var(--latte);
+      background: var(--white);
+      border: 2px solid var(--sea);
       border-radius: 14px;
       display: flex;
       align-items: center;
@@ -387,34 +380,34 @@
       flex-shrink: 0;
       position: relative;
       z-index: 1;
-      box-shadow: 0 2px 12px rgba(44,26,14,0.08);
+      box-shadow: 0 2px 12px rgba(15,42,51,0.08);
     }
 
     .timeline-dot.current {
-      background: var(--espresso);
-      border-color: var(--espresso);
+      background: var(--ink);
+      border-color: var(--ink);
     }
 
     .timeline-card {
-      background: var(--warm-white);
-      border: 1px solid var(--mist);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: 16px;
       padding: 1.75rem 2rem;
       flex: 1;
-      box-shadow: 0 2px 16px rgba(44,26,14,0.05);
+      box-shadow: 0 2px 16px rgba(15,42,51,0.05);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .timeline-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(44,26,14,0.1);
+      box-shadow: 0 6px 24px rgba(15,42,51,0.1);
     }
 
     .timeline-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
@@ -423,25 +416,30 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem;
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
     }
 
     .timeline-period {
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--accent);
-      background: var(--foam);
+      color: var(--teal);
+      background: var(--mint);
       padding: 0.3rem 0.8rem;
       border-radius: 99px;
-      border: 1px solid var(--latte);
+      border: 1px solid var(--sea);
       white-space: nowrap;
     }
 
     .timeline-company {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--brown);
-      margin-bottom: 0.75rem;
+      color: var(--deep);
+      margin-bottom: 0.9rem;
+    }
+
+    .timeline-company span {
+      font-weight: 400;
+      color: var(--text-light);
     }
 
     .timeline-desc {
@@ -469,7 +467,7 @@
 
     .timeline-bullets li::before {
       content: '→';
-      color: var(--caramel);
+      color: var(--teal);
       font-size: 0.8rem;
       margin-top: 0.1rem;
       flex-shrink: 0;
@@ -483,17 +481,30 @@
     }
 
     .chip {
-      background: var(--foam);
-      border: 1px solid var(--latte);
-      color: var(--brown);
+      background: var(--mint);
+      border: 1px solid var(--sea);
+      color: var(--deep);
       font-size: 0.75rem;
       font-weight: 500;
       padding: 0.25rem 0.7rem;
       border-radius: 99px;
     }
 
+    .timeline-note {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--white);
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .timeline-note strong { color: var(--text); font-weight: 600; }
+
     /* SKILLS */
-    #skills { background: var(--foam); }
+    #skills { background: var(--mint); }
 
     .skills-grid {
       display: grid;
@@ -503,8 +514,8 @@
     }
 
     .skill-card {
-      background: var(--warm-white);
-      border: 1px solid var(--mist);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: 20px;
       padding: 2rem;
       transition: transform 0.2s, box-shadow 0.2s;
@@ -512,7 +523,7 @@
 
     .skill-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(44,26,14,0.1);
+      box-shadow: 0 8px 28px rgba(15,42,51,0.1);
     }
 
     .skill-icon {
@@ -524,7 +535,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
       margin-bottom: 0.5rem;
     }
 
@@ -554,31 +565,68 @@
       content: '';
       width: 6px;
       height: 6px;
-      background: var(--caramel);
+      background: var(--teal);
       border-radius: 50%;
       flex-shrink: 0;
     }
 
+    /* LEADERSHIP */
+    #leadership { background: var(--white); }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .lead-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+
+    .lead-card .role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .lead-card .org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 0.3rem;
+    }
+
+    .lead-card .when {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
     /* EDUCATION */
-    #education { background: var(--warm-white); }
+    #education { background: var(--paper); }
 
     .edu-card {
-      background: linear-gradient(135deg, var(--foam) 0%, #fff9f4 100%);
-      border: 1px solid var(--latte);
+      background: linear-gradient(135deg, var(--mint) 0%, #ffffff 100%);
+      border: 1px solid var(--sea);
       border-radius: 24px;
       padding: 3rem;
       margin-top: 3rem;
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 2.5rem;
-      align-items: center;
-      box-shadow: 0 4px 24px rgba(44,26,14,0.07);
+      align-items: start;
+      box-shadow: 0 4px 24px rgba(15,42,51,0.07);
     }
 
     .edu-icon {
       width: 80px;
       height: 80px;
-      background: var(--espresso);
+      background: var(--ink);
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -590,14 +638,14 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--espresso);
+      color: var(--ink);
       margin-bottom: 0.4rem;
     }
 
     .edu-content .school {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--brown);
+      color: var(--deep);
       margin-bottom: 0.75rem;
     }
 
@@ -605,19 +653,19 @@
       font-size: 0.95rem;
       color: var(--text-light);
       line-height: 1.7;
-      max-width: 600px;
+      max-width: 640px;
     }
 
     .edu-meta {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
       margin-top: 1.25rem;
     }
 
     .edu-badge {
-      background: var(--warm-white);
-      border: 1px solid var(--mist);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: 8px;
       padding: 0.4rem 0.9rem;
       font-size: 0.8rem;
@@ -625,18 +673,48 @@
       color: var(--text);
     }
 
-    /* CONTACT */
-    #contact { background: var(--espresso); }
+    .coursework {
+      margin-top: 1.5rem;
+    }
 
-    #contact .section-tag { color: var(--latte); }
+    .coursework h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+    }
+
+    .coursework ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .coursework li {
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.8rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 99px;
+    }
+
+    /* CONTACT */
+    #contact { background: var(--ink); }
+
+    #contact .section-tag { color: var(--sea); }
     #contact h2 { color: #fff; }
     #contact .section-intro { color: rgba(255,255,255,0.6); }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
       margin-top: 3rem;
+      max-width: 760px;
     }
 
     .contact-card {
@@ -674,11 +752,12 @@
       font-size: 0.95rem;
       font-weight: 500;
       color: #fff;
+      word-break: break-word;
     }
 
     /* FOOTER */
     footer {
-      background: #1a0e06;
+      background: #091b21;
       padding: 2rem;
       text-align: center;
     }
@@ -688,7 +767,7 @@
       color: rgba(255,255,255,0.35);
     }
 
-    footer span { color: var(--latte); }
+    footer span { color: var(--sea); }
 
     /* ANIMATIONS */
     .fade-up {
@@ -702,28 +781,35 @@
       transform: translateY(0);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-visual { order: -1; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
+      .lead-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
-      .edu-card { grid-template-columns: 1fr; text-align: center; }
-      .edu-icon { margin: 0 auto; }
-      .edu-meta { justify-content: center; }
+      .edu-card { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
       nav { padding: 0 1rem; }
       .nav-links { display: none; }
       section { padding: 4rem 1.25rem; }
+      .hero { padding: 90px 1.25rem 3rem; }
       .skills-grid { grid-template-columns: 1fr; }
       .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+      .timeline { margin-top: 2.5rem; }
       .timeline::before { left: 22px; }
+      .timeline-item { gap: 1rem; }
       .timeline-dot { width: 46px; height: 46px; font-size: 1.2rem; }
       .timeline-card { padding: 1.25rem; }
       .edu-card { padding: 2rem 1.5rem; }
+      .edu-icon { width: 64px; height: 64px; font-size: 2rem; }
     }
   </style>
 </head>
@@ -736,6 +822,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#leadership">Leadership</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -745,40 +832,40 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-badge"><span>☕</span> Hospitality Professional</div>
-        <h1>Crafting <em>Experiences</em>, One Cup at a Time</h1>
+        <div class="hero-badge"><span>🩺</span> Kinesiology, UMass Amherst · EMT-B</div>
+        <h1>Helping people <em>move better</em> and recover from injury.</h1>
         <p class="hero-sub">
-          From pulling espresso shots to leading teams — Samara Mehta brings warmth, precision, and leadership to every role in food & hospitality.
+          I'm Samara Mehta, a kinesiology student at the University of Massachusetts Amherst and a nationally registered EMT-Basic. I've worked in a physical therapy clinic, a hospital's trauma bay and ICU, and a Division I athletic training room. I'm looking for an entry-level clinical role in rehabilitation or hospital care while I prepare for a Doctor of Physical Therapy program.
         </p>
         <div class="hero-ctas">
-          <a href="#experience" class="btn-primary">View My Journey</a>
-          <a href="#contact" class="btn-outline">Get in Touch</a>
+          <a href="#experience" class="btn-primary">Clinical experience</a>
+          <a href="#contact" class="btn-outline">Get in touch</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-stat-grid">
           <div class="stat-card">
-            <div class="num">4+</div>
-            <div class="label">Years in Hospitality</div>
+            <div class="num">3.6</div>
+            <div class="label">GPA, B.S. Kinesiology</div>
           </div>
           <div class="stat-card">
-            <div class="num">3</div>
-            <div class="label">Roles Progressed</div>
+            <div class="num">EMT-B</div>
+            <div class="label">NREMT certified</div>
           </div>
           <div class="stat-card accent-card">
-            <div class="coffee-icon">🎓</div>
+            <div class="stat-icon">🎓</div>
             <div>
               <div class="num">UMass Amherst</div>
-              <div class="label">B.S. Kinesiology — currently studying</div>
+              <div class="label">School of Public Health and Health Sciences · Dean's List, Spring 2025</div>
             </div>
           </div>
           <div class="stat-card">
-            <div class="num">100s</div>
-            <div class="label">Customers Served Daily</div>
+            <div class="num">3</div>
+            <div class="label">Clinical and athletic settings: PT clinic, hospital, D1 athletics</div>
           </div>
           <div class="stat-card">
-            <div class="num">☕</div>
-            <div class="label">Barista → Asst. Manager</div>
+            <div class="num">3</div>
+            <div class="label">Languages: English, Hindi, Spanish</div>
           </div>
         </div>
       </div>
@@ -788,55 +875,55 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
-      <p class="section-tag">About Me</p>
-      <h2>Hospitality is a craft,<br />not just a job.</h2>
+      <p class="section-tag">About</p>
+      <h2>Movement science,<br />applied to patient care.</h2>
       <div class="about-grid">
         <div class="about-text fade-up">
           <p>
-            I'm <strong>Samara Mehta</strong>, a hospitality professional and kinesiology student at the University of Massachusetts Amherst. My journey in food service began behind an espresso machine and has grown into leading teams, managing operations, and creating the kind of guest experiences that keep people coming back.
+            My degree is in <strong>kinesiology</strong>: biomechanics, exercise physiology, motor control and musculoskeletal anatomy. What I like about it is how directly it maps onto a treatment room. When a patient struggles with a step-up or compensates on a squat, the coursework explains why, and the clinic shows what to do about it.
           </p>
           <p>
-            What started as a love for coffee quickly became a passion for the entire hospitality ecosystem — the rhythm of a busy café, the satisfaction of a perfectly crafted order, and the challenge of keeping a team motivated through the rush.
+            I got my first clinical hours as an <strong>EMT student intern at Nassau University Medical Center</strong>, rotating through the Trauma Bay, Pediatric Unit, ICU and Burn Unit. Before that I spent a summer with the head athletic trainer at Long Island University, taping, bracing and running recovery modalities for Division I football players. Most recently I worked as a <strong>physical therapy aide at Nee's Physical Therapy</strong> in Hoboken, guiding patients through their prescribed exercises under a PT's supervision.
           </p>
           <p>
-            My background in <strong>kinesiology</strong> sharpens my understanding of how people move, work, and perform — making me a more effective team leader and a more thoughtful operator.
+            The next step is a Doctor of Physical Therapy program. Until then I want to be in a clinic or hospital, learning from the people doing the work.
           </p>
           <div class="about-tags">
-            <span class="tag">Team Leadership</span>
-            <span class="tag">Customer Service</span>
-            <span class="tag">Café Operations</span>
-            <span class="tag">Training & Mentoring</span>
-            <span class="tag">Inventory Management</span>
-            <span class="tag">Conflict Resolution</span>
+            <span class="tag">Rehabilitation</span>
+            <span class="tag">Patient care</span>
+            <span class="tag">Biomechanics</span>
+            <span class="tag">Emergency medicine</span>
+            <span class="tag">Athletic training</span>
+            <span class="tag">Pre-DPT</span>
           </div>
         </div>
         <div class="about-highlight fade-up">
           <div class="highlight-item">
-            <div class="highlight-icon">☕</div>
+            <div class="highlight-icon">🏥</div>
             <div class="highlight-text">
-              <h4>Started as a Barista</h4>
-              <p>Mastered espresso technique, latte art, and the science of a perfect brew — building a loyal customer base from day one.</p>
+              <h4>Hospital rotations</h4>
+              <p>Trauma Bay, Pediatric Unit, ICU and Burn Unit at Nassau University Medical Center, monitoring vitals and preparing equipment alongside doctors and nurses.</p>
             </div>
           </div>
           <div class="highlight-item">
-            <div class="highlight-icon">📋</div>
+            <div class="highlight-icon">🦵</div>
             <div class="highlight-text">
-              <h4>Grew into Management</h4>
-              <p>Took on increasing responsibility — scheduling, inventory, training new staff, and keeping operations smooth during peak hours.</p>
+              <h4>Outpatient rehab</h4>
+              <p>Therapeutic exercise, modalities (hot/cold packs, e-stim) and front-desk intake as a PT aide in Hoboken.</p>
             </div>
           </div>
           <div class="highlight-item">
-            <div class="highlight-icon">🤝</div>
+            <div class="highlight-icon">🏈</div>
             <div class="highlight-text">
-              <h4>Guest-First Philosophy</h4>
-              <p>Believe that every interaction is an opportunity to make someone's day better — whether it's their first visit or their hundredth.</p>
+              <h4>Division I athletics</h4>
+              <p>Injury prevention, taping and bracing, and cryotherapy, heat and pneumatic compression for LIU football.</p>
             </div>
           </div>
           <div class="highlight-item">
-            <div class="highlight-icon">🎓</div>
+            <div class="highlight-icon">🚑</div>
             <div class="highlight-text">
-              <h4>Academic Foundation</h4>
-              <p>Pursuing Kinesiology at UMass Amherst — applying science of human movement to build stronger, healthier teams.</p>
+              <h4>EMT-Basic</h4>
+              <p>Certified through the National Registry of Emergency Medical Technicians. CPR, AED and BLS current.</p>
             </div>
           </div>
         </div>
@@ -847,96 +934,85 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-inner">
-      <p class="section-tag">Career Journey</p>
-      <h2>From first shift to<br />running the floor.</h2>
-      <p class="section-intro">A progression built on consistency, care, and a genuine love for the hospitality industry.</p>
+      <p class="section-tag">Experience</p>
+      <h2>Clinical and athletic<br />training experience.</h2>
+      <p class="section-intro">Three settings, each with patients at a different point in recovery: an outpatient PT clinic, a hospital's critical care units, and a college football training room.</p>
 
       <div class="timeline">
 
         <div class="timeline-item fade-up">
-          <div class="timeline-dot current">☕</div>
+          <div class="timeline-dot current">🦵</div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div class="timeline-title">Assistant Manager</div>
-              <div class="timeline-period">Current Role</div>
+              <div class="timeline-title">Physical Therapy Aide</div>
+              <div class="timeline-period">May 2026 – Aug 2026</div>
             </div>
-            <div class="timeline-company">CAFE'INN</div>
+            <div class="timeline-company">Nee's Physical Therapy <span>· Hoboken, NJ</span></div>
             <p class="timeline-desc">
-              Promoted to assistant manager after demonstrating consistent performance and natural leadership ability. Now responsible for day-to-day operations, staff coordination, and maintaining the quality standards that define the CAFE'INN experience.
+              Outpatient clinic work across the full visit, from check-in to the last set.
             </p>
             <ul class="timeline-bullets">
-              <li>Oversee daily opening and closing procedures, ensuring smooth operations from first cup to last</li>
-              <li>Manage staff scheduling, balancing business needs with team wellbeing</li>
-              <li>Handle inventory ordering, supplier coordination, and waste reduction</li>
-              <li>Train and onboard new baristas, setting them up for success from day one</li>
-              <li>Resolve customer concerns promptly and professionally, turning problems into loyalty</li>
-              <li>Collaborate with ownership on menu updates and seasonal promotions</li>
+              <li>Guided patients through prescribed therapeutic exercises and corrected form under the physical therapist's supervision</li>
+              <li>Prepared treatment tables, applied modalities (hot and cold packs, e-stim) and sanitized equipment between sessions</li>
+              <li>Ran front-desk intake, appointment scheduling and patient check-ins</li>
             </ul>
             <div class="skills-chips">
-              <span class="chip">Operations Management</span>
-              <span class="chip">Staff Scheduling</span>
-              <span class="chip">Inventory Control</span>
-              <span class="chip">Training</span>
-              <span class="chip">Guest Relations</span>
+              <span class="chip">Therapeutic exercise</span>
+              <span class="chip">Modalities</span>
+              <span class="chip">Patient intake</span>
+              <span class="chip">Scheduling</span>
             </div>
           </div>
         </div>
 
         <div class="timeline-item fade-up">
-          <div class="timeline-dot">👥</div>
+          <div class="timeline-dot">🏥</div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div class="timeline-title">Senior Barista & Team Lead</div>
-              <div class="timeline-period">2023 – 2024</div>
+              <div class="timeline-title">EMT Student Intern</div>
+              <div class="timeline-period">Oct 2023 – Mar 2024</div>
             </div>
-            <div class="timeline-company">CAFE'INN</div>
-            <p class="timeline-desc">
-              Bridged the gap between barista craft and management responsibility. Led the floor team during peak shifts, mentored junior staff, and took ownership of quality control across all drink preparation.
-            </p>
+            <div class="timeline-company">Nassau University Medical Center <span>· East Meadow, NY</span></div>
             <ul class="timeline-bullets">
-              <li>Led a team of 4–6 baristas during high-volume morning and weekend rushes</li>
-              <li>Maintained drink quality consistency across the full menu, including seasonal specials</li>
-              <li>Created training guides and cheat sheets used by all new hires</li>
-              <li>Fielded escalated customer concerns when management was unavailable</li>
-              <li>Assisted with end-of-day cash reconciliation and inventory counts</li>
+              <li>Assisted doctors and nurses across critical care units: Trauma Bay, Pediatric Unit, ICU and Burn Unit</li>
+              <li>Monitored vitals, transported patients and prepared medical equipment</li>
+              <li>Worked with medical teams across departments, keeping communication clear in a high-pressure hospital environment</li>
             </ul>
             <div class="skills-chips">
-              <span class="chip">Team Leadership</span>
-              <span class="chip">Quality Control</span>
-              <span class="chip">Mentoring</span>
-              <span class="chip">Cash Handling</span>
+              <span class="chip">Vitals assessment</span>
+              <span class="chip">Patient transport</span>
+              <span class="chip">Critical care</span>
+              <span class="chip">Team communication</span>
             </div>
           </div>
         </div>
 
         <div class="timeline-item fade-up">
-          <div class="timeline-dot">✨</div>
+          <div class="timeline-dot">🏈</div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div class="timeline-title">Barista</div>
-              <div class="timeline-period">2022 – 2023</div>
+              <div class="timeline-title">Summer Intern, Athletic Training</div>
+              <div class="timeline-period">Jun 2023 – Aug 2023</div>
             </div>
-            <div class="timeline-company">CAFE'INN</div>
-            <p class="timeline-desc">
-              Joined CAFE'INN as a barista and quickly became known for efficiency, a warm presence, and a genuine curiosity about coffee craft. Built strong relationships with regulars and became a trusted part of the team.
-            </p>
+            <div class="timeline-company">Long Island University <span>· Brookville, NY</span></div>
             <ul class="timeline-bullets">
-              <li>Prepared and served espresso beverages, teas, and specialty drinks to exacting standards</li>
-              <li>Learned latte art and consistently received positive feedback from customers</li>
-              <li>Maintained cleanliness and health code compliance across all stations</li>
-              <li>Memorized regular customers' orders, creating a personal, welcoming atmosphere</li>
-              <li>Handled POS transactions accurately during high-volume service periods</li>
+              <li>Assisted the Head Athletic Trainer with daily injury prevention, taping and bracing, and active rehabilitation protocols for Division I football student-athletes</li>
+              <li>Set up sideline hydration stations, emergency equipment and treatment areas for practices and team training sessions</li>
+              <li>Administered recovery modalities: cryotherapy, therapeutic heat and pneumatic compression</li>
             </ul>
             <div class="skills-chips">
-              <span class="chip">Espresso Technique</span>
-              <span class="chip">Latte Art</span>
-              <span class="chip">POS Systems</span>
-              <span class="chip">Customer Service</span>
-              <span class="chip">Food Safety</span>
+              <span class="chip">Taping and bracing</span>
+              <span class="chip">Injury prevention</span>
+              <span class="chip">Cryotherapy</span>
+              <span class="chip">Pneumatic compression</span>
             </div>
           </div>
         </div>
 
+      </div>
+
+      <div class="timeline-note fade-up">
+        <strong>Alongside school:</strong> Restaurant team member at The Works Cafe in Amherst since Aug 2024, working high-volume shifts, handling the register and keeping service moving. It pays for college and keeps me quick on my feet.
       </div>
     </div>
   </section>
@@ -944,80 +1020,74 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
-      <p class="section-tag">What I Bring</p>
-      <h2>Skills sharpened in<br />real environments.</h2>
-      <p class="section-intro">Every capability below was earned on the floor — not in a classroom.</p>
+      <p class="section-tag">Skills</p>
+      <h2>What I can do<br />on day one.</h2>
 
       <div class="skills-grid">
         <div class="skill-card fade-up">
-          <div class="skill-icon">☕</div>
-          <h3>Coffee Craft</h3>
-          <p>Trained across the full spectrum of espresso-based and specialty beverages.</p>
+          <div class="skill-icon">🩺</div>
+          <h3>Clinical</h3>
+          <p>Hands-on skills from the clinic, the hospital and the training room.</p>
           <ul class="skill-list">
-            <li>Espresso extraction & dialing</li>
-            <li>Latte art (free-pour & etching)</li>
-            <li>Cold brew & nitro prep</li>
-            <li>Tea & alternative milk knowledge</li>
-            <li>Seasonal menu development</li>
+            <li>Patient transfers</li>
+            <li>Ambulation assistance</li>
+            <li>Modality preparation (cryo, heat, e-stim)</li>
+            <li>Posture and gait screening</li>
+            <li>Goniometry</li>
+            <li>Vitals assessment</li>
+            <li>HIPAA compliance</li>
+            <li>BLS/CPR</li>
           </ul>
         </div>
         <div class="skill-card fade-up">
           <div class="skill-icon">📋</div>
-          <h3>Operations</h3>
-          <p>Hands-on experience running a busy café from open to close.</p>
+          <h3>Technical</h3>
+          <p>Charting, scheduling and the office side of a clinic.</p>
           <ul class="skill-list">
-            <li>Opening & closing procedures</li>
-            <li>Inventory & ordering</li>
-            <li>Staff scheduling</li>
-            <li>Cash handling & reconciliation</li>
-            <li>Health & safety compliance</li>
+            <li>EHR/EMR charting systems</li>
+            <li>Google Workspace (Sheets, Docs, Slides)</li>
+            <li>Microsoft Office (Excel, PowerPoint, Word)</li>
+            <li>LINEST statistical modeling</li>
+            <li>Canva</li>
           </ul>
         </div>
         <div class="skill-card fade-up">
-          <div class="skill-icon">🤝</div>
-          <h3>Guest Experience</h3>
-          <p>Building loyalty through every interaction, every single day.</p>
+          <div class="skill-icon">✅</div>
+          <h3>Certifications and languages</h3>
+          <p>Current credentials and the languages I can take a patient history in.</p>
           <ul class="skill-list">
-            <li>Complaint resolution</li>
-            <li>Building customer rapport</li>
-            <li>High-volume service</li>
-            <li>Accessibility & inclusivity</li>
-            <li>Feedback implementation</li>
+            <li>EMT-Basic, National Registry (NREMT)</li>
+            <li>CPR and AED certified</li>
+            <li>English, fluent</li>
+            <li>Hindi, fluent</li>
+            <li>Spanish, conversational</li>
           </ul>
         </div>
-        <div class="skill-card fade-up">
-          <div class="skill-icon">👥</div>
-          <h3>Team Leadership</h3>
-          <p>Motivating and developing a team under pressure.</p>
-          <ul class="skill-list">
-            <li>Onboarding & training</li>
-            <li>Shift management</li>
-            <li>Conflict resolution</li>
-            <li>Performance feedback</li>
-            <li>Morale & culture building</li>
-          </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership">
+    <div class="section-inner">
+      <p class="section-tag">Leadership</p>
+      <h2>On campus.</h2>
+      <p class="section-intro">Roles at UMass outside the classroom.</p>
+      <div class="lead-grid">
+        <div class="lead-card fade-up">
+          <div class="role">Kinesiology Peer Advisor</div>
+          <div class="org">UMass School of Public Health and Health Sciences</div>
+          <div class="when">Sept 2026 – present</div>
         </div>
-        <div class="skill-card fade-up">
-          <div class="skill-icon">🧠</div>
-          <h3>Kinesiology Knowledge</h3>
-          <p>Applying movement science to create a healthier workplace.</p>
-          <ul class="skill-list">
-            <li>Ergonomics & injury prevention</li>
-            <li>Physical performance awareness</li>
-            <li>Wellness-conscious scheduling</li>
-            <li>Human anatomy fundamentals</li>
-          </ul>
+        <div class="lead-card fade-up">
+          <div class="role">Marketing Manager</div>
+          <div class="org">UMass Kinesiology Club</div>
+          <div class="when">Sept 2025 – present</div>
         </div>
-        <div class="skill-card fade-up">
-          <div class="skill-icon">⚡</div>
-          <h3>Adaptability</h3>
-          <p>Thriving in fast-paced, unpredictable environments.</p>
-          <ul class="skill-list">
-            <li>Rush-hour composure</li>
-            <li>Multi-tasking under pressure</li>
-            <li>Quick problem solving</li>
-            <li>Cross-training flexibility</li>
-          </ul>
+        <div class="lead-card fade-up">
+          <div class="role">Assistant Marketing Manager</div>
+          <div class="org">Chi Omega</div>
+          <div class="when">Sept 2025 – present</div>
         </div>
       </div>
     </div>
@@ -1027,19 +1097,31 @@
   <section id="education">
     <div class="section-inner">
       <p class="section-tag">Education</p>
-      <h2>Building the science<br />behind the practice.</h2>
+      <h2>Bachelor of Science,<br />Kinesiology.</h2>
       <div class="edu-card fade-up">
         <div class="edu-icon">🎓</div>
         <div class="edu-content">
-          <h3>Bachelor of Science — Kinesiology</h3>
-          <div class="school">University of Massachusetts Amherst</div>
+          <h3>University of Massachusetts Amherst</h3>
+          <div class="school">School of Public Health and Health Sciences · Amherst, MA</div>
           <p>
-            Studying the science of human movement, physical performance, and health — disciplines that directly inform how I lead teams, design shift structures, and think about employee wellbeing in high-demand hospitality environments.
+            B.S. in Kinesiology, started Aug 2024. GPA 3.6, Dean's List in Spring 2025. The program covers the science behind rehabilitation: how joints and muscles produce movement, how the body responds to exercise, and how injuries are prevented and treated.
           </p>
           <div class="edu-meta">
-            <span class="edu-badge">📍 Amherst, MA</span>
-            <span class="edu-badge">🕐 Currently Enrolled</span>
-            <span class="edu-badge">🏃 Kinesiology</span>
+            <span class="edu-badge">GPA 3.6</span>
+            <span class="edu-badge">Dean's List, Spring 2025</span>
+            <span class="edu-badge">Expected graduation 2027</span>
+          </div>
+          <div class="coursework">
+            <h4>Relevant coursework</h4>
+            <ul>
+              <li>Musculoskeletal Anatomy &amp; Physiology</li>
+              <li>Biomechanics</li>
+              <li>Exercise Physiology</li>
+              <li>Motor Control</li>
+              <li>Prevention &amp; Care of Athletic Injuries</li>
+              <li>Physics for Life Sciences</li>
+              <li>Statistics &amp; Data Modeling</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1049,9 +1131,9 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
-      <p class="section-tag">Let's Connect</p>
-      <h2>Open to new opportunities.</h2>
-      <p class="section-intro">Whether it's a management role, a hospitality project, or just a great conversation — reach out.</p>
+      <p class="section-tag">Contact</p>
+      <h2>Looking for an entry-level clinical role.</h2>
+      <p class="section-intro">Rehabilitation, outpatient PT, or hospital care, in the New York and New Jersey area. Based in Jersey City, NJ.</p>
       <div class="contact-grid">
         <a href="mailto:samara@mehtahouse.cc" class="contact-card">
           <div class="contact-card-icon">✉️</div>
@@ -1060,18 +1142,11 @@
             <p>samara@mehtahouse.cc</p>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/samara-mehta-13272528a/" target="_blank" rel="noopener" class="contact-card">
+        <a href="https://www.linkedin.com/in/samara-mehta" target="_blank" rel="noopener" class="contact-card">
           <div class="contact-card-icon">💼</div>
           <div>
             <h4>LinkedIn</h4>
-            <p>samara-mehta-13272528a</p>
-          </div>
-        </a>
-        <a href="https://github.com/theexxby-prog" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card-icon">💻</div>
-          <div>
-            <h4>GitHub</h4>
-            <p>theexxby-prog</p>
+            <p>linkedin.com/in/samara-mehta</p>
           </div>
         </a>
       </div>
@@ -1080,19 +1155,25 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 <span>Samara Mehta</span> — Crafted with care ☕</p>
+    <p>© 2026 <span>Samara Mehta</span> · Jersey City, NJ</p>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const fadeEls = document.querySelectorAll('.fade-up');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          // Reveal when it enters the viewport, or if the reader already scrolled past it.
+          if (entry.isIntersecting || entry.boundingClientRect.bottom < 0) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+      fadeEls.forEach(el => observer.observe(el));
+    } else {
+      fadeEls.forEach(el => el.classList.add('visible'));
+    }
   </script>
 </body>
 </html>
