@@ -53,29 +53,27 @@ cloud sessions at claude.ai/code. A cloud session sees only this repo, not the M
    it under "Not deployed yet" so the next Mac session ships it.
 
 ## Current state
-_Updated 2026-10-17 from the Mac (rebuilt the site around the Sept 2026 resume)._
-- **Live (once Workers Builds finishes this push):** the clinical/kinesiology version of the
-  site. The old April 2026 page was a coffee-shop themed barista portfolio (CAFE'INN); every
-  section was rewritten from the Sept 2026 resume: hero (pre-DPT, EMT-B, entry-level clinical
-  role), about, experience (Nee's PT aide, NUMC EMT intern, LIU athletic training; The Works
-  Cafe demoted to one line), skills, a new leadership section, education with coursework,
-  contact (email + LinkedIn only; GitHub card removed). Palette moved from espresso/caramel to
-  teal/ink; fonts (Playfair Display + Inter) and layout structure kept.
-- **Source of truth for content:** Samara's resume, "Samara Mehta - Resume (Sept 2026)". When
-  she sends a new one, update the site from it; don't invent numbers or roles.
-- **Deliberately left off the public site:** her phone number and the resume PDF (the PDF
-  carries the phone). Add a resume download only if Samara wants it public.
-- **Assumptions to confirm with Samara:** "Expected graduation 2027" (Vishal's words, not on
-  the resume); LinkedIn link is the resume's `linkedin.com/in/samara-mehta` (the old site used
-  `samara-mehta-13272528a`); email is `samara.mehta@gmail.com` (Vishal confirmed 2026-10-17; never use samara@mehtahouse.cc).
-- **Local preview:** `python3 -m http.server` on the folder (registered as `samara-site` in
-  `~/dev/.claude/launch.json`); tested desktop and 375px phone widths on 2026-10-17.
-- **Not deployed yet:** nothing after this push.
-- **Opening redesign in progress (2026-10-17):** Samara wasn't happy with the hero. Round 1
-  Lab (four looks, Claude artifact "Samara Opening Lab"): she picked A "Clinic" for layout,
-  colors and fonts but called the headline "Kinesiology student, EMT, future physical
-  therapist." cringe; she also liked C "Minimal". Round 2 artifact "Samara Opening Round 2"
-  offers A1/A2 (Clinic) and C1/C2 (Minimal) with quieter headlines plus a headline list.
-  Waiting on her round-2 picks and a portrait photo; then rebuild the hero in `index.html`.
-- **Open / next:** round-2 picks; the photo; confirm "Expected graduation 2027" and the
-  LinkedIn link with Samara.
+_Updated 2026-10-17 from the Mac (opening rebuilt from Samara's final picks; photo added)._
+- **Live:** the "A1 Clinic" look Samara chose after two Lab rounds: hero with her name as
+  the headline, one italic line ("Kinesiology student at UMass Amherst. Certified EMT."),
+  bone/forest/copper palette, Fraunces + Inter, her cutout photo (`photo.webp`, 116 KB,
+  transparent, 1200x1500) on a sage-to-forest gradient in a rounded frame with two floating
+  badges and a copper ring. Motion: staggered hero entrance, drifting blobs, count-up
+  numbers, highlight-swipe on the role line, pointer tilt on the photo (mouse only),
+  nav shrink on scroll, scroll reveals, timeline line that draws itself, hover lifts on
+  every card. All of it is off under `prefers-reduced-motion`.
+- **Content source of truth:** Samara's resume "Samara Mehta - Resume (Sept 2026)". Don't
+  invent numbers or roles. Email is samara.mehta@gmail.com (never samara@mehtahouse.cc).
+- **Photo:** original files in `~/Downloads/Samara-Mehta-headshot-4x5-transparent.png` (and
+  the grey-background JPG). Regenerate `photo.webp` with
+  `cwebp -q 86 -alpha_q 90 -exact -m 6 <png> -o photo.webp`. The hero falls back to "SM"
+  initials if the image is missing.
+- **Design history:** Claude artifacts "Samara Opening Lab" (round 1: A Clinic, B Bold, C
+  Minimal, D Soft) and "Samara Opening Round 2" (A1, A2, C1, C2 + headline list). Picks:
+  A1 everything, headline H3. Keep the look; don't revert to the earlier teal or coffee pages.
+- **Left off the public site on purpose:** phone number, resume PDF.
+- **Still to confirm with Samara:** "Expected graduation 2027" and the LinkedIn link
+  `linkedin.com/in/samara-mehta`.
+- **Local preview:** `samara-site` in `~/dev/.claude/launch.json` (python http.server on
+  this folder, port 8765). Tested desktop 1280 and phone 375 widths on 2026-10-17.
+- **Not deployed yet:** nothing.
