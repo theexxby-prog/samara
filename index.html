@@ -7,612 +7,667 @@
   <meta name="description" content="Samara Mehta: kinesiology student at UMass Amherst, certified EMT-B, physical therapy aide. Seeking an entry-level clinical role in rehabilitation or hospital care." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --paper: #f7f9f8;
-      --white: #ffffff;
-      --ink: #0f2a33;
-      --deep: #164552;
-      --teal: #1f7a8c;
-      --sea: #5fb3bf;
-      --mint: #e4f1ee;
-      --line: #dde6e4;
-      --text: #223238;
-      --text-light: #5d6f75;
-      --accent: #c9672e;
+      --bone: #f3efe7;
+      --bone-2: #ebe5d8;
+      --paper: #fffdf9;
+      --ink: #1d2b27;
+      --forest: #1f4d40;
+      --forest-deep: #163a30;
+      --copper: #a3542b;
+      --copper-soft: #f1dccc;
+      --sage: #8f9c8c;
+      --line: #e2dccf;
+      --text: #2b3a35;
+      --muted: #5a6a64;
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --shadow-sm: 0 2px 10px rgba(29,43,39,0.06);
+      --shadow-md: 0 10px 30px rgba(29,43,39,0.10);
+      --shadow-lg: 0 30px 60px rgba(31,77,64,0.18);
+      --ease: cubic-bezier(.2,.7,.2,1);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--paper);
+      font-family: var(--sans);
+      background: var(--bone);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
+
+    ::selection { background: var(--copper-soft); color: var(--ink); }
 
     /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(247, 249, 248, 0.92);
+      background: rgba(243, 239, 231, 0.85);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
       padding: 0 2rem;
-      height: 64px;
+      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: height 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
     }
+
+    nav.scrolled { height: 58px; border-bottom-color: var(--line); box-shadow: var(--shadow-sm); }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--serif);
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--ink);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
+      text-decoration: none;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
 
     .nav-links a {
+      position: relative;
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      color: var(--text-light);
+      color: var(--muted);
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--teal); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -6px;
+      height: 2px;
+      background: var(--copper);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { transform: scaleX(1); }
 
     /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(160deg, #ffffff 0%, #eef5f3 55%, #e3eeeb 100%);
-      padding: 100px 2rem 4rem;
       position: relative;
       overflow: hidden;
+      padding: 150px 2rem 90px;
+      background: var(--bone);
     }
 
-    .hero::before {
-      content: '';
+    .blob {
       position: absolute;
-      top: -100px; right: -100px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(31,122,140,0.12) 0%, transparent 70%);
       border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+      opacity: 0.7;
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(201,103,46,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-    }
+    .blob-1 { width: 520px; height: 520px; top: -160px; right: -120px; background: radial-gradient(circle, rgba(163,84,43,0.18), transparent 65%); animation: drift1 22s ease-in-out infinite alternate; }
+    .blob-2 { width: 420px; height: 420px; bottom: -140px; left: -120px; background: radial-gradient(circle, rgba(31,77,64,0.16), transparent 65%); animation: drift2 26s ease-in-out infinite alternate; }
+
+    @keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(-60px, 50px) scale(1.12); } }
+    @keyframes drift2 { from { transform: translate(0, 0) scale(1); } to { transform: translate(70px, -40px) scale(1.08); } }
 
     .hero-inner {
+      position: relative;
       max-width: 1100px;
       margin: 0 auto;
-      width: 100%;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-badge {
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--copper);
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 28px; height: 2px;
+      background: var(--copper);
+      transform-origin: left;
+      animation: grow 0.8s var(--ease) 0.2s both;
+    }
+
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    h1 {
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 1.1rem;
+    }
+
+    .role {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      color: var(--forest);
+      line-height: 1.35;
+      margin-bottom: 1.2rem;
+      display: inline;
+      background-image: linear-gradient(var(--copper-soft), var(--copper-soft));
+      background-repeat: no-repeat;
+      background-size: 0% 0.5em;
+      background-position: 0 88%;
+      animation: highlight 1s var(--ease) 1.1s both;
+    }
+
+    .role-wrap { margin-bottom: 1.2rem; }
+
+    @keyframes highlight { to { background-size: 100% 0.5em; } }
+
+    .lead {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 48ch;
+      margin-bottom: 1.75rem;
+    }
+
+    .ctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--mint);
-      border: 1px solid var(--sea);
-      border-radius: 99px;
-      padding: 0.4rem 1rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--deep);
-      margin-bottom: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s;
+      will-change: transform;
     }
 
-    .hero-badge span { font-size: 1rem; }
+    .btn-primary { background: var(--forest); color: #fff; box-shadow: 0 6px 18px rgba(31,77,64,0.25); }
+    .btn-primary:hover { background: var(--forest-deep); transform: translateY(-3px); box-shadow: 0 14px 28px rgba(31,77,64,0.3); }
+    .btn-primary:active { transform: translateY(-1px); }
+    .btn-primary .arrow { transition: transform 0.25s var(--ease); }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
+    .btn-link {
+      color: var(--forest);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      position: relative;
+      padding: 0.8rem 0;
     }
 
-    h1 em {
-      font-style: italic;
-      color: var(--teal);
+    .btn-link::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0.55rem;
+      height: 2px;
+      background: var(--copper);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease);
     }
 
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--text-light);
-      max-width: 520px;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
+    .btn-link:hover::after { transform: scaleX(0.4); }
 
-    .hero-ctas {
+    .meta {
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
+      margin-top: 2.2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
       flex-wrap: wrap;
     }
 
-    .btn-primary {
-      background: var(--ink);
-      color: #fff;
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.9rem;
+    .meta div { font-size: 0.8rem; color: var(--muted); }
+
+    .meta b {
+      display: block;
+      font-family: var(--serif);
       font-weight: 600;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover { background: var(--deep); transform: translateY(-1px); }
-
-    .btn-outline {
-      background: transparent;
+      font-size: 1.5rem;
       color: var(--ink);
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
-      border: 1.5px solid var(--ink);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.15s;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.2;
     }
 
-    .btn-outline:hover { background: var(--mint); transform: translateY(-1px); }
+    /* Photo */
+    .photo-wrap { position: relative; perspective: 1200px; }
 
-    .hero-stat-grid {
+    .photo {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 18px 18px 120px 18px;
+      background:
+        radial-gradient(90% 70% at 50% 100%, rgba(31,77,64,0.55), transparent 70%),
+        linear-gradient(160deg, #e9dfcc 0%, #a9b5a3 50%, #3f5f52 100%);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      place-items: center;
+      transform-style: preserve-3d;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
     }
 
-    .stat-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 12px rgba(15,42,51,0.06);
+    .photo img {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      filter: drop-shadow(0 20px 30px rgba(29,43,39,0.25));
     }
 
-    .stat-card .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-
-    .stat-card .label {
-      font-size: 0.8rem;
-      color: var(--text-light);
+    .photo .initials {
+      font-family: var(--serif);
+      font-style: italic;
       font-weight: 500;
+      font-size: clamp(5rem, 12vw, 9rem);
+      color: rgba(255,253,249,0.9);
+      letter-spacing: -0.04em;
+      text-shadow: 0 10px 40px rgba(29,43,39,0.25);
     }
 
-    .stat-card.accent-card {
-      background: var(--ink);
-      border-color: var(--ink);
-      grid-column: span 2;
+    .photo.has-img .initials { display: none; }
+
+    .photo::before {
+      content: '';
+      position: absolute;
+      width: 70%; aspect-ratio: 1;
+      border-radius: 50%;
+      left: 15%; top: 10%;
+      background: radial-gradient(circle, rgba(255,253,249,0.55), transparent 65%);
+      pointer-events: none;
+      animation: breathe 7s ease-in-out infinite;
+    }
+
+    @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.12); opacity: 1; } }
+
+    .badge {
+      position: absolute;
+      left: -18px;
+      bottom: 42px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.8rem 1rem;
+      box-shadow: var(--shadow-md);
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.7rem;
+      animation: float 5s ease-in-out infinite;
+      z-index: 2;
     }
 
-    .stat-card.accent-card .num,
-    .stat-card.accent-card .label { color: #fff; }
-    .stat-card.accent-card .num { font-size: 1.5rem; }
-    .stat-card.accent-card .label { opacity: 0.7; }
+    .badge-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--copper-soft);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+    }
 
-    .stat-icon { font-size: 2rem; flex-shrink: 0; }
+    .badge b { display: block; font-size: 0.85rem; color: var(--ink); }
+    .badge span { font-size: 0.72rem; color: var(--muted); }
 
-    /* SECTION SHARED */
-    section { padding: 6rem 2rem; }
+    .badge-2 { left: auto; right: -14px; top: 38px; bottom: auto; animation-delay: -2.5s; }
 
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+    .ring {
+      position: absolute;
+      width: 110px; height: 110px;
+      border: 2px solid var(--copper);
+      border-radius: 50%;
+      right: 30px; bottom: -30px;
+      opacity: 0.55;
+      animation: spin 30s linear infinite;
+      z-index: 2;
+    }
+
+    .ring::before { content: ''; position: absolute; top: -6px; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--copper); transform: translateX(-50%); }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Hero entrance */
+    .rise { opacity: 0; transform: translateY(26px); animation: rise 0.9s var(--ease) forwards; }
+    .rise.d1 { animation-delay: 0.05s; }
+    .rise.d2 { animation-delay: 0.18s; }
+    .rise.d3 { animation-delay: 0.32s; }
+    .rise.d4 { animation-delay: 0.46s; }
+    .rise.d5 { animation-delay: 0.6s; }
+    .rise.d6 { animation-delay: 0.78s; }
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+    .photo-wrap.enter { opacity: 0; transform: translateY(30px) rotate(-3deg) scale(0.96); animation: photoIn 1.1s var(--ease) 0.3s forwards; }
+    @keyframes photoIn { to { opacity: 1; transform: translateY(0) rotate(0) scale(1); } }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; position: relative; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
     .section-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--teal);
+      color: var(--copper);
       margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
+
+    .section-tag::before { content: ''; width: 22px; height: 2px; background: var(--copper); }
 
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 700;
-      color: var(--ink);
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
       letter-spacing: -0.02em;
-      line-height: 1.2;
+      line-height: 1.12;
+      color: var(--ink);
       margin-bottom: 1rem;
+      text-wrap: balance;
     }
 
-    .section-intro {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      max-width: 600px;
-      line-height: 1.75;
-    }
+    h2 em { font-style: italic; font-weight: 400; color: var(--forest); }
+
+    .section-intro { font-size: 1.02rem; color: var(--muted); max-width: 60ch; line-height: 1.75; }
 
     /* ABOUT */
-    #about { background: var(--white); }
+    #about { background: var(--paper); }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 4rem;
       align-items: start;
       margin-top: 3rem;
     }
 
-    .about-text p {
-      color: var(--text-light);
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-      font-size: 1rem;
-    }
+    .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
+    .about-text p strong { color: var(--ink); font-weight: 600; }
 
-    .about-text p strong { color: var(--text); font-weight: 600; }
-
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
 
     .tag {
-      background: var(--mint);
-      border: 1px solid var(--sea);
-      color: var(--deep);
-      font-size: 0.8rem;
+      background: var(--bone);
+      border: 1px solid var(--line);
+      color: var(--forest);
+      font-size: 0.78rem;
       font-weight: 500;
       padding: 0.35rem 0.85rem;
       border-radius: 99px;
+      transition: transform 0.2s var(--ease), background 0.2s, border-color 0.2s;
     }
 
-    .about-highlight {
-      background: var(--mint);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid var(--line);
-    }
+    .tag:hover { transform: translateY(-2px); background: var(--copper-soft); border-color: var(--copper); }
 
-    .highlight-item {
+    .highlights { display: grid; gap: 0.9rem; }
+
+    .hl {
       display: flex;
       gap: 1rem;
       align-items: flex-start;
-      margin-bottom: 1.5rem;
+      background: var(--bone);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.1rem 1.2rem;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
     }
 
-    .highlight-item:last-child { margin-bottom: 0; }
+    .hl:hover { transform: translateX(6px); box-shadow: var(--shadow-md); border-color: var(--sage); }
 
-    .highlight-icon {
-      width: 42px;
-      height: 42px;
-      background: var(--white);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hl-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
       font-size: 1.25rem;
       flex-shrink: 0;
-      border: 1px solid var(--line);
+      transition: transform 0.3s var(--ease);
     }
 
-    .highlight-text h4 {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--ink);
-      margin-bottom: 0.2rem;
-    }
-
-    .highlight-text p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      line-height: 1.5;
-      margin: 0;
-    }
+    .hl:hover .hl-icon { transform: rotate(-8deg) scale(1.08); }
+    .hl h4 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.2rem; }
+    .hl p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
 
     /* EXPERIENCE */
-    #experience { background: var(--paper); }
+    #experience { background: var(--bone); }
 
-    .timeline {
-      margin-top: 3.5rem;
-      position: relative;
-    }
+    .timeline { margin-top: 3.5rem; position: relative; }
 
     .timeline::before {
       content: '';
       position: absolute;
-      left: 28px;
-      top: 0;
-      bottom: 0;
+      left: 28px; top: 0; bottom: 0;
       width: 2px;
-      background: linear-gradient(to bottom, var(--sea), var(--line));
+      background: linear-gradient(to bottom, var(--copper), var(--sage), var(--line));
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 1.6s var(--ease);
     }
 
-    .timeline-item {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      position: relative;
-    }
+    .timeline.drawn::before { transform: scaleY(1); }
 
-    .timeline-item:last-child { margin-bottom: 0; }
+    .t-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+    .t-item:last-child { margin-bottom: 0; }
 
-    .timeline-dot {
-      width: 58px;
-      height: 58px;
-      background: var(--white);
-      border: 2px solid var(--sea);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .t-dot {
+      width: 58px; height: 58px;
+      background: var(--paper);
+      border: 2px solid var(--sage);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
       font-size: 1.5rem;
       flex-shrink: 0;
       position: relative;
       z-index: 1;
-      box-shadow: 0 2px 12px rgba(15,42,51,0.08);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease);
     }
 
-    .timeline-dot.current {
-      background: var(--ink);
-      border-color: var(--ink);
+    .t-item:hover .t-dot { transform: rotate(-6deg) scale(1.06); }
+
+    .t-dot.current { background: var(--forest); border-color: var(--forest); }
+
+    .t-dot.current::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 20px;
+      border: 2px solid var(--forest);
+      opacity: 0;
+      animation: pulse 2.4s ease-out infinite;
     }
 
-    .timeline-card {
-      background: var(--white);
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 100% { transform: scale(1.25); opacity: 0; } }
+
+    .t-card {
+      background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 1.75rem 2rem;
       flex: 1;
-      box-shadow: 0 2px 16px rgba(15,42,51,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+      min-width: 0;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
     }
 
-    .timeline-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(15,42,51,0.1);
-    }
+    .t-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.5rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .t-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
 
-    .timeline-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
+    .t-title { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; color: var(--ink); }
 
-    .timeline-period {
-      font-size: 0.8rem;
+    .t-period {
+      font-size: 0.75rem;
       font-weight: 600;
-      color: var(--teal);
-      background: var(--mint);
+      color: var(--copper);
+      background: var(--copper-soft);
       padding: 0.3rem 0.8rem;
       border-radius: 99px;
-      border: 1px solid var(--sea);
       white-space: nowrap;
     }
 
-    .timeline-company {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--deep);
-      margin-bottom: 0.9rem;
-    }
+    .t-company { font-size: 0.9rem; font-weight: 600; color: var(--forest); margin-bottom: 0.9rem; }
+    .t-company span { font-weight: 400; color: var(--muted); }
 
-    .timeline-company span {
-      font-weight: 400;
-      color: var(--text-light);
-    }
+    .t-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.9rem; }
 
-    .timeline-desc {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 
-    .timeline-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .timeline-bullets li {
+    .bullets li {
       font-size: 0.875rem;
-      color: var(--text-light);
+      color: var(--muted);
       display: flex;
-      align-items: flex-start;
       gap: 0.6rem;
       line-height: 1.55;
+      transition: transform 0.2s var(--ease), color 0.2s;
     }
 
-    .timeline-bullets li::before {
-      content: '→';
-      color: var(--teal);
-      font-size: 0.8rem;
-      margin-top: 0.1rem;
-      flex-shrink: 0;
-    }
+    .bullets li::before { content: '→'; color: var(--copper); flex-shrink: 0; transition: transform 0.25s var(--ease); }
+    .bullets li:hover { color: var(--text); transform: translateX(3px); }
+    .bullets li:hover::before { transform: translateX(3px); }
 
-    .skills-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1rem;
-    }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
 
     .chip {
-      background: var(--mint);
-      border: 1px solid var(--sea);
-      color: var(--deep);
-      font-size: 0.75rem;
+      background: var(--bone);
+      border: 1px solid var(--line);
+      color: var(--forest);
+      font-size: 0.74rem;
       font-weight: 500;
       padding: 0.25rem 0.7rem;
       border-radius: 99px;
+      transition: transform 0.2s var(--ease), background 0.2s;
     }
 
-    .timeline-note {
+    .chip:hover { transform: translateY(-2px); background: var(--copper-soft); }
+
+    .aside {
       margin-top: 2.5rem;
-      padding: 1.25rem 1.5rem;
-      background: var(--white);
-      border: 1px dashed var(--line);
-      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      background: var(--paper);
+      border: 1px dashed var(--sage);
+      border-radius: 14px;
       font-size: 0.875rem;
-      color: var(--text-light);
+      color: var(--muted);
       line-height: 1.6;
     }
 
-    .timeline-note strong { color: var(--text); font-weight: 600; }
+    .aside strong { color: var(--ink); font-weight: 600; }
 
     /* SKILLS */
-    #skills { background: var(--mint); }
+    #skills { background: var(--forest); color: #fff; overflow: hidden; }
+    #skills .section-tag { color: #e6b797; }
+    #skills .section-tag::before { background: #e6b797; }
+    #skills h2 { color: #fff; }
+    #skills h2 em { color: #e6b797; }
+    #skills .section-intro { color: rgba(255,255,255,0.7); }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
+    #skills::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      right: -200px; top: -250px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 65%);
+      animation: drift2 28s ease-in-out infinite alternate;
+      pointer-events: none;
     }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; position: relative; }
 
     .skill-card {
-      background: var(--white);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
       border-radius: 20px;
       padding: 2rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.35s var(--ease), background 0.35s, box-shadow 0.35s var(--ease), border-color 0.35s;
     }
 
-    .skill-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(15,42,51,0.1);
-    }
+    .skill-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.1); border-color: rgba(230,183,151,0.6); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
 
-    .skill-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+    .skill-icon { font-size: 1.9rem; margin-bottom: 1rem; display: inline-block; transition: transform 0.4s var(--ease); }
+    .skill-card:hover .skill-icon { transform: rotate(-10deg) scale(1.15); }
 
-    .skill-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
+    .skill-card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: #fff; margin-bottom: 0.4rem; }
+    .skill-card p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 1.2rem; }
 
-    .skill-card p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-    }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
 
-    .skill-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .skill-list li {
-      font-size: 0.85rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .skill-list li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--teal);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .skill-list li { font-size: 0.86rem; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 0.55rem; }
+    .skill-list li::before { content: ''; width: 6px; height: 6px; background: #e6b797; border-radius: 50%; flex-shrink: 0; }
 
     /* LEADERSHIP */
-    #leadership { background: var(--white); }
+    #leadership { background: var(--paper); }
 
-    .lead-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
+    .lead-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
 
     .lead-card {
-      background: var(--paper);
+      background: var(--bone);
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
     }
 
-    .lead-card .role {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
+    .lead-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--copper);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s var(--ease);
     }
 
-    .lead-card .org {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--deep);
-      margin-bottom: 0.3rem;
-    }
+    .lead-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .lead-card:hover::before { transform: scaleY(1); }
 
-    .lead-card .when {
-      font-size: 0.8rem;
-      color: var(--text-light);
-    }
+    .lead-card .r { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.3rem; }
+    .lead-card .o { font-size: 0.9rem; font-weight: 600; color: var(--forest); margin-bottom: 0.3rem; }
+    .lead-card .w { font-size: 0.8rem; color: var(--muted); }
 
     /* EDUCATION */
-    #education { background: var(--paper); }
+    #education { background: var(--bone); }
 
-    .edu-card {
-      background: linear-gradient(135deg, var(--mint) 0%, #ffffff 100%);
-      border: 1px solid var(--sea);
+    .edu {
+      background: var(--paper);
+      border: 1px solid var(--line);
       border-radius: 24px;
       padding: 3rem;
       margin-top: 3rem;
@@ -620,105 +675,71 @@
       grid-template-columns: auto 1fr;
       gap: 2.5rem;
       align-items: start;
-      box-shadow: 0 4px 24px rgba(15,42,51,0.07);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
     }
+
+    .edu:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 
     .edu-icon {
-      width: 80px;
-      height: 80px;
-      background: var(--ink);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 84px; height: 84px;
+      background: var(--forest);
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
       font-size: 2.5rem;
+      box-shadow: 0 10px 24px rgba(31,77,64,0.3);
+      animation: float 6s ease-in-out infinite;
     }
 
-    .edu-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
+    .edu h3 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--ink); margin-bottom: 0.3rem; }
+    .edu .school { font-size: 0.95rem; font-weight: 600; color: var(--forest); margin-bottom: 0.75rem; }
+    .edu p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; max-width: 640px; }
 
-    .edu-content .school {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--deep);
-      margin-bottom: 0.75rem;
-    }
-
-    .edu-content p {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      line-height: 1.7;
-      max-width: 640px;
-    }
-
-    .edu-meta {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1.25rem;
-    }
+    .edu-meta { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.2rem; }
 
     .edu-badge {
-      background: var(--white);
+      background: var(--bone);
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 0.4rem 0.9rem;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--text);
+      color: var(--ink);
+      transition: transform 0.2s var(--ease), background 0.2s;
     }
 
-    .coursework {
-      margin-top: 1.5rem;
-    }
+    .edu-badge:hover { transform: translateY(-2px); background: var(--copper-soft); }
 
-    .coursework h4 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 0.6rem;
-    }
-
-    .coursework ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .coursework li {
-      background: var(--white);
-      border: 1px solid var(--line);
-      color: var(--text);
-      font-size: 0.8rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 99px;
-    }
+    .coursework { margin-top: 1.5rem; }
+    .coursework h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.6rem; }
+    .coursework ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .coursework li { background: var(--bone); border: 1px solid var(--line); color: var(--text); font-size: 0.8rem; padding: 0.3rem 0.75rem; border-radius: 99px; transition: transform 0.2s var(--ease); }
+    .coursework li:hover { transform: translateY(-2px); }
 
     /* CONTACT */
-    #contact { background: var(--ink); }
-
-    #contact .section-tag { color: var(--sea); }
+    #contact { background: var(--ink); overflow: hidden; }
+    #contact .section-tag { color: #e6b797; }
+    #contact .section-tag::before { background: #e6b797; }
     #contact h2 { color: #fff; }
+    #contact h2 em { color: #e6b797; }
     #contact .section-intro { color: rgba(255,255,255,0.6); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-top: 3rem;
-      max-width: 760px;
+    #contact::after {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      left: -250px; bottom: -400px;
+      background: radial-gradient(circle, rgba(163,84,43,0.25), transparent 65%);
+      animation: drift1 24s ease-in-out infinite alternate;
+      pointer-events: none;
     }
 
+    .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 3rem; max-width: 760px; position: relative; }
+
     .contact-card {
-      background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 16px;
       padding: 1.75rem;
@@ -726,89 +747,61 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.3s, transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s var(--ease);
     }
 
-    .contact-card:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-2px);
-    }
+    .contact-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-4px); border-color: rgba(230,183,151,0.6); box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
 
-    .contact-card-icon {
-      font-size: 1.75rem;
-      flex-shrink: 0;
-    }
-
-    .contact-card h4 {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-card p {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #fff;
-      word-break: break-word;
-    }
+    .contact-icon { font-size: 1.6rem; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+    .contact-card:hover .contact-icon { transform: scale(1.15) rotate(-8deg); }
+    .contact-card h4 { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+    .contact-card p { font-size: 0.95rem; font-weight: 500; color: #fff; word-break: break-word; }
 
     /* FOOTER */
-    footer {
-      background: #091b21;
-      padding: 2rem;
-      text-align: center;
-    }
+    footer { background: #142019; padding: 2rem; text-align: center; }
+    footer p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+    footer span { color: #e6b797; font-family: var(--serif); }
 
-    footer p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.35);
-    }
-
-    footer span { color: var(--sea); }
-
-    /* ANIMATIONS */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* Scroll reveal */
+    .fade-up { opacity: 0; transform: translateY(26px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: var(--d, 0s); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .slide-in { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: var(--d, 0s); }
+    .slide-in.visible { opacity: 1; transform: translateX(0); }
 
     @media (prefers-reduced-motion: reduce) {
-      .fade-up { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .rise, .photo-wrap.enter, .fade-up, .slide-in { opacity: 1; transform: none; }
+      .timeline::before { transform: scaleY(1); }
+      .role { background-size: 100% 0.5em; }
       html { scroll-behavior: auto; }
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .photo-wrap { max-width: 380px; margin: 0 auto; width: 100%; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .lead-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
-      .edu-card { grid-template-columns: 1fr; }
+      .edu { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
-      nav { padding: 0 1rem; }
+      nav { padding: 0 1.1rem; }
       .nav-links { display: none; }
       section { padding: 4rem 1.25rem; }
-      .hero { padding: 90px 1.25rem 3rem; }
+      .hero { padding: 110px 1.25rem 3.5rem; }
+      .blob { filter: blur(30px); }
       .skills-grid { grid-template-columns: 1fr; }
-      .hero-stat-grid { grid-template-columns: 1fr 1fr; }
-      .timeline { margin-top: 2.5rem; }
+      .badge { left: 8px; bottom: 24px; padding: 0.6rem 0.8rem; }
+      .badge-2 { left: auto; right: 8px; top: 20px; bottom: auto; }
+      .ring { right: 14px; bottom: -22px; width: 80px; height: 80px; }
       .timeline::before { left: 22px; }
-      .timeline-item { gap: 1rem; }
-      .timeline-dot { width: 46px; height: 46px; font-size: 1.2rem; }
-      .timeline-card { padding: 1.25rem; }
-      .edu-card { padding: 2rem 1.5rem; }
+      .t-item { gap: 1rem; }
+      .t-dot { width: 46px; height: 46px; font-size: 1.2rem; border-radius: 13px; }
+      .t-card { padding: 1.25rem; }
+      .edu { padding: 2rem 1.5rem; }
       .edu-icon { width: 64px; height: 64px; font-size: 2rem; }
     }
   </style>
@@ -816,8 +809,8 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-logo">Samara Mehta</div>
+  <nav id="nav">
+    <a href="#" class="nav-logo">Samara Mehta</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -830,44 +823,41 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
     <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge"><span>🩺</span> Kinesiology, UMass Amherst · EMT-B</div>
-        <h1>Helping people <em>move better</em> and recover from injury.</h1>
-        <p class="hero-sub">
-          I'm Samara Mehta, a kinesiology student at the University of Massachusetts Amherst and a nationally registered EMT-Basic. I've worked in a physical therapy clinic, a hospital's trauma bay and ICU, and a Division I athletic training room. I'm looking for an entry-level clinical role in rehabilitation or hospital care while I prepare for a Doctor of Physical Therapy program.
+      <div>
+        <div class="eyebrow rise d1">Jersey City, NJ · UMass Amherst</div>
+        <h1 class="rise d2">Samara Mehta</h1>
+        <div class="role-wrap rise d3"><span class="role">Kinesiology student at UMass Amherst. Certified EMT.</span></div>
+        <p class="lead rise d4">
+          I've worked in an outpatient PT clinic, a hospital's trauma bay and ICU, and a Division I athletic training room. I'm looking for an entry-level clinical role in rehabilitation or hospital care in the New York and New Jersey area while I prepare for a Doctor of Physical Therapy program.
         </p>
-        <div class="hero-ctas">
-          <a href="#experience" class="btn-primary">Clinical experience</a>
-          <a href="#contact" class="btn-outline">Get in touch</a>
+        <div class="ctas rise d5">
+          <a href="#experience" class="btn btn-primary">See my experience <span class="arrow">→</span></a>
+          <a href="#contact" class="btn-link">Email me</a>
+        </div>
+        <div class="meta rise d6">
+          <div><b data-count="3.6" data-decimals="1">0.0</b>GPA</div>
+          <div><b>EMT-B</b>NREMT certified</div>
+          <div><b data-count="3">0</b>Clinical settings</div>
+          <div><b data-count="3">0</b>Languages</div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-stat-grid">
-          <div class="stat-card">
-            <div class="num">3.6</div>
-            <div class="label">GPA, B.S. Kinesiology</div>
-          </div>
-          <div class="stat-card">
-            <div class="num">EMT-B</div>
-            <div class="label">NREMT certified</div>
-          </div>
-          <div class="stat-card accent-card">
-            <div class="stat-icon">🎓</div>
-            <div>
-              <div class="num">UMass Amherst</div>
-              <div class="label">School of Public Health and Health Sciences · Dean's List, Spring 2025</div>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="num">3</div>
-            <div class="label">Clinical and athletic settings: PT clinic, hospital, D1 athletics</div>
-          </div>
-          <div class="stat-card">
-            <div class="num">3</div>
-            <div class="label">Languages: English, Hindi, Spanish</div>
-          </div>
+      <div class="photo-wrap enter" id="photoWrap">
+        <div class="photo" id="photo">
+          <span class="initials">SM</span>
+          <img src="photo.webp" alt="Samara Mehta" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" />
         </div>
+        <div class="badge">
+          <div class="badge-icon">🚑</div>
+          <div><b>EMT-Basic</b><span>National Registry</span></div>
+        </div>
+        <div class="badge badge-2">
+          <div class="badge-icon">🎓</div>
+          <div><b>Dean's List</b><span>Spring 2025</span></div>
+        </div>
+        <div class="ring"></div>
       </div>
     </div>
   </section>
@@ -875,8 +865,8 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
-      <p class="section-tag">About</p>
-      <h2>Movement science,<br />applied to patient care.</h2>
+      <p class="section-tag fade-up">About</p>
+      <h2 class="fade-up">Movement science,<br /><em>applied to patient care.</em></h2>
       <div class="about-grid">
         <div class="about-text fade-up">
           <p>
@@ -888,7 +878,7 @@
           <p>
             The next step is a Doctor of Physical Therapy program. Until then I want to be in a clinic or hospital, learning from the people doing the work.
           </p>
-          <div class="about-tags">
+          <div class="tags">
             <span class="tag">Rehabilitation</span>
             <span class="tag">Patient care</span>
             <span class="tag">Biomechanics</span>
@@ -897,34 +887,22 @@
             <span class="tag">Pre-DPT</span>
           </div>
         </div>
-        <div class="about-highlight fade-up">
-          <div class="highlight-item">
-            <div class="highlight-icon">🏥</div>
-            <div class="highlight-text">
-              <h4>Hospital rotations</h4>
-              <p>Trauma Bay, Pediatric Unit, ICU and Burn Unit at Nassau University Medical Center, monitoring vitals and preparing equipment alongside doctors and nurses.</p>
-            </div>
+        <div class="highlights">
+          <div class="hl fade-up" style="--d: 0.05s">
+            <div class="hl-icon">🏥</div>
+            <div><h4>Hospital rotations</h4><p>Trauma Bay, Pediatric Unit, ICU and Burn Unit at Nassau University Medical Center, monitoring vitals and preparing equipment alongside doctors and nurses.</p></div>
           </div>
-          <div class="highlight-item">
-            <div class="highlight-icon">🦵</div>
-            <div class="highlight-text">
-              <h4>Outpatient rehab</h4>
-              <p>Therapeutic exercise, modalities (hot/cold packs, e-stim) and front-desk intake as a PT aide in Hoboken.</p>
-            </div>
+          <div class="hl fade-up" style="--d: 0.15s">
+            <div class="hl-icon">🦵</div>
+            <div><h4>Outpatient rehab</h4><p>Therapeutic exercise, modalities (hot/cold packs, e-stim) and front-desk intake as a PT aide in Hoboken.</p></div>
           </div>
-          <div class="highlight-item">
-            <div class="highlight-icon">🏈</div>
-            <div class="highlight-text">
-              <h4>Division I athletics</h4>
-              <p>Injury prevention, taping and bracing, and cryotherapy, heat and pneumatic compression for LIU football.</p>
-            </div>
+          <div class="hl fade-up" style="--d: 0.25s">
+            <div class="hl-icon">🏈</div>
+            <div><h4>Division I athletics</h4><p>Injury prevention, taping and bracing, and cryotherapy, heat and pneumatic compression for LIU football.</p></div>
           </div>
-          <div class="highlight-item">
-            <div class="highlight-icon">🚑</div>
-            <div class="highlight-text">
-              <h4>EMT-Basic</h4>
-              <p>Certified through the National Registry of Emergency Medical Technicians. CPR, AED and BLS current.</p>
-            </div>
+          <div class="hl fade-up" style="--d: 0.35s">
+            <div class="hl-icon">🚑</div>
+            <div><h4>EMT-Basic</h4><p>Certified through the National Registry of Emergency Medical Technicians. CPR, AED and BLS current.</p></div>
           </div>
         </div>
       </div>
@@ -934,84 +912,67 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-inner">
-      <p class="section-tag">Experience</p>
-      <h2>Clinical and athletic<br />training experience.</h2>
-      <p class="section-intro">Three settings, each with patients at a different point in recovery: an outpatient PT clinic, a hospital's critical care units, and a college football training room.</p>
+      <p class="section-tag fade-up">Experience</p>
+      <h2 class="fade-up">Clinical and athletic<br /><em>training experience.</em></h2>
+      <p class="section-intro fade-up">Three settings, each with patients at a different point in recovery: an outpatient PT clinic, a hospital's critical care units, and a college football training room.</p>
 
-      <div class="timeline">
+      <div class="timeline" id="timeline">
 
-        <div class="timeline-item fade-up">
-          <div class="timeline-dot current">🦵</div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title">Physical Therapy Aide</div>
-              <div class="timeline-period">May 2026 – Aug 2026</div>
+        <div class="t-item slide-in">
+          <div class="t-dot current">🦵</div>
+          <div class="t-card">
+            <div class="t-head">
+              <div class="t-title">Physical Therapy Aide</div>
+              <div class="t-period">May 2026 – Aug 2026</div>
             </div>
-            <div class="timeline-company">Nee's Physical Therapy <span>· Hoboken, NJ</span></div>
-            <p class="timeline-desc">
-              Outpatient clinic work across the full visit, from check-in to the last set.
-            </p>
-            <ul class="timeline-bullets">
+            <div class="t-company">Nee's Physical Therapy <span>· Hoboken, NJ</span></div>
+            <p class="t-desc">Outpatient clinic work across the full visit, from check-in to the last set.</p>
+            <ul class="bullets">
               <li>Guided patients through prescribed therapeutic exercises and corrected form under the physical therapist's supervision</li>
               <li>Prepared treatment tables, applied modalities (hot and cold packs, e-stim) and sanitized equipment between sessions</li>
               <li>Ran front-desk intake, appointment scheduling and patient check-ins</li>
             </ul>
-            <div class="skills-chips">
-              <span class="chip">Therapeutic exercise</span>
-              <span class="chip">Modalities</span>
-              <span class="chip">Patient intake</span>
-              <span class="chip">Scheduling</span>
-            </div>
+            <div class="chips"><span class="chip">Therapeutic exercise</span><span class="chip">Modalities</span><span class="chip">Patient intake</span><span class="chip">Scheduling</span></div>
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
-          <div class="timeline-dot">🏥</div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title">EMT Student Intern</div>
-              <div class="timeline-period">Oct 2023 – Mar 2024</div>
+        <div class="t-item slide-in" style="--d: 0.1s">
+          <div class="t-dot">🏥</div>
+          <div class="t-card">
+            <div class="t-head">
+              <div class="t-title">EMT Student Intern</div>
+              <div class="t-period">Oct 2023 – Mar 2024</div>
             </div>
-            <div class="timeline-company">Nassau University Medical Center <span>· East Meadow, NY</span></div>
-            <ul class="timeline-bullets">
+            <div class="t-company">Nassau University Medical Center <span>· East Meadow, NY</span></div>
+            <ul class="bullets">
               <li>Assisted doctors and nurses across critical care units: Trauma Bay, Pediatric Unit, ICU and Burn Unit</li>
               <li>Monitored vitals, transported patients and prepared medical equipment</li>
               <li>Worked with medical teams across departments, keeping communication clear in a high-pressure hospital environment</li>
             </ul>
-            <div class="skills-chips">
-              <span class="chip">Vitals assessment</span>
-              <span class="chip">Patient transport</span>
-              <span class="chip">Critical care</span>
-              <span class="chip">Team communication</span>
-            </div>
+            <div class="chips"><span class="chip">Vitals assessment</span><span class="chip">Patient transport</span><span class="chip">Critical care</span><span class="chip">Team communication</span></div>
           </div>
         </div>
 
-        <div class="timeline-item fade-up">
-          <div class="timeline-dot">🏈</div>
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-title">Summer Intern, Athletic Training</div>
-              <div class="timeline-period">Jun 2023 – Aug 2023</div>
+        <div class="t-item slide-in" style="--d: 0.1s">
+          <div class="t-dot">🏈</div>
+          <div class="t-card">
+            <div class="t-head">
+              <div class="t-title">Summer Intern, Athletic Training</div>
+              <div class="t-period">Jun 2023 – Aug 2023</div>
             </div>
-            <div class="timeline-company">Long Island University <span>· Brookville, NY</span></div>
-            <ul class="timeline-bullets">
+            <div class="t-company">Long Island University <span>· Brookville, NY</span></div>
+            <ul class="bullets">
               <li>Assisted the Head Athletic Trainer with daily injury prevention, taping and bracing, and active rehabilitation protocols for Division I football student-athletes</li>
               <li>Set up sideline hydration stations, emergency equipment and treatment areas for practices and team training sessions</li>
               <li>Administered recovery modalities: cryotherapy, therapeutic heat and pneumatic compression</li>
             </ul>
-            <div class="skills-chips">
-              <span class="chip">Taping and bracing</span>
-              <span class="chip">Injury prevention</span>
-              <span class="chip">Cryotherapy</span>
-              <span class="chip">Pneumatic compression</span>
-            </div>
+            <div class="chips"><span class="chip">Taping and bracing</span><span class="chip">Injury prevention</span><span class="chip">Cryotherapy</span><span class="chip">Pneumatic compression</span></div>
           </div>
         </div>
 
       </div>
 
-      <div class="timeline-note fade-up">
+      <div class="aside fade-up">
         <strong>Alongside school:</strong> Restaurant team member at The Works Cafe in Amherst since Aug 2024, working high-volume shifts, handling the register and keeping service moving. It pays for college and keeps me quick on my feet.
       </div>
     </div>
@@ -1020,11 +981,11 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
-      <p class="section-tag">Skills</p>
-      <h2>What I can do<br />on day one.</h2>
+      <p class="section-tag fade-up">Skills</p>
+      <h2 class="fade-up">What I can do<br /><em>on day one.</em></h2>
 
       <div class="skills-grid">
-        <div class="skill-card fade-up">
+        <div class="skill-card fade-up" style="--d: 0.05s">
           <div class="skill-icon">🩺</div>
           <h3>Clinical</h3>
           <p>Hands-on skills from the clinic, the hospital and the training room.</p>
@@ -1039,7 +1000,7 @@
             <li>BLS/CPR</li>
           </ul>
         </div>
-        <div class="skill-card fade-up">
+        <div class="skill-card fade-up" style="--d: 0.18s">
           <div class="skill-icon">📋</div>
           <h3>Technical</h3>
           <p>Charting, scheduling and the office side of a clinic.</p>
@@ -1051,7 +1012,7 @@
             <li>Canva</li>
           </ul>
         </div>
-        <div class="skill-card fade-up">
+        <div class="skill-card fade-up" style="--d: 0.31s">
           <div class="skill-icon">✅</div>
           <h3>Certifications and languages</h3>
           <p>Current credentials and the languages I can take a patient history in.</p>
@@ -1070,24 +1031,24 @@
   <!-- LEADERSHIP -->
   <section id="leadership">
     <div class="section-inner">
-      <p class="section-tag">Leadership</p>
-      <h2>On campus.</h2>
-      <p class="section-intro">Roles at UMass outside the classroom.</p>
+      <p class="section-tag fade-up">Leadership</p>
+      <h2 class="fade-up">On campus.</h2>
+      <p class="section-intro fade-up">Roles at UMass outside the classroom.</p>
       <div class="lead-grid">
-        <div class="lead-card fade-up">
-          <div class="role">Kinesiology Peer Advisor</div>
-          <div class="org">UMass School of Public Health and Health Sciences</div>
-          <div class="when">Sept 2026 – present</div>
+        <div class="lead-card fade-up" style="--d: 0.05s">
+          <div class="r">Kinesiology Peer Advisor</div>
+          <div class="o">UMass School of Public Health and Health Sciences</div>
+          <div class="w">Sept 2026 – present</div>
         </div>
-        <div class="lead-card fade-up">
-          <div class="role">Marketing Manager</div>
-          <div class="org">UMass Kinesiology Club</div>
-          <div class="when">Sept 2025 – present</div>
+        <div class="lead-card fade-up" style="--d: 0.18s">
+          <div class="r">Marketing Manager</div>
+          <div class="o">UMass Kinesiology Club</div>
+          <div class="w">Sept 2025 – present</div>
         </div>
-        <div class="lead-card fade-up">
-          <div class="role">Assistant Marketing Manager</div>
-          <div class="org">Chi Omega</div>
-          <div class="when">Sept 2025 – present</div>
+        <div class="lead-card fade-up" style="--d: 0.31s">
+          <div class="r">Assistant Marketing Manager</div>
+          <div class="o">Chi Omega</div>
+          <div class="w">Sept 2025 – present</div>
         </div>
       </div>
     </div>
@@ -1096,16 +1057,14 @@
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-inner">
-      <p class="section-tag">Education</p>
-      <h2>Bachelor of Science,<br />Kinesiology.</h2>
-      <div class="edu-card fade-up">
+      <p class="section-tag fade-up">Education</p>
+      <h2 class="fade-up">Bachelor of Science,<br /><em>Kinesiology.</em></h2>
+      <div class="edu fade-up">
         <div class="edu-icon">🎓</div>
-        <div class="edu-content">
+        <div>
           <h3>University of Massachusetts Amherst</h3>
           <div class="school">School of Public Health and Health Sciences · Amherst, MA</div>
-          <p>
-            B.S. in Kinesiology, started Aug 2024. GPA 3.6, Dean's List in Spring 2025. The program covers the science behind rehabilitation: how joints and muscles produce movement, how the body responds to exercise, and how injuries are prevented and treated.
-          </p>
+          <p>B.S. in Kinesiology, started Aug 2024. GPA 3.6, Dean's List in Spring 2025. The program covers the science behind rehabilitation: how joints and muscles produce movement, how the body responds to exercise, and how injuries are prevented and treated.</p>
           <div class="edu-meta">
             <span class="edu-badge">GPA 3.6</span>
             <span class="edu-badge">Dean's List, Spring 2025</span>
@@ -1131,23 +1090,17 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
-      <p class="section-tag">Contact</p>
-      <h2>Looking for an entry-level clinical role.</h2>
-      <p class="section-intro">Rehabilitation, outpatient PT, or hospital care, in the New York and New Jersey area. Based in Jersey City, NJ.</p>
+      <p class="section-tag fade-up">Contact</p>
+      <h2 class="fade-up">Looking for an <em>entry-level clinical role.</em></h2>
+      <p class="section-intro fade-up">Rehabilitation, outpatient PT, or hospital care, in the New York and New Jersey area. Based in Jersey City, NJ.</p>
       <div class="contact-grid">
-        <a href="mailto:samara.mehta@gmail.com" class="contact-card">
-          <div class="contact-card-icon">✉️</div>
-          <div>
-            <h4>Email</h4>
-            <p>samara.mehta@gmail.com</p>
-          </div>
+        <a href="mailto:samara.mehta@gmail.com" class="contact-card fade-up" style="--d: 0.05s">
+          <div class="contact-icon">✉️</div>
+          <div><h4>Email</h4><p>samara.mehta@gmail.com</p></div>
         </a>
-        <a href="https://www.linkedin.com/in/samara-mehta" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card-icon">💼</div>
-          <div>
-            <h4>LinkedIn</h4>
-            <p>linkedin.com/in/samara-mehta</p>
-          </div>
+        <a href="https://www.linkedin.com/in/samara-mehta" target="_blank" rel="noopener" class="contact-card fade-up" style="--d: 0.18s">
+          <div class="contact-icon">💼</div>
+          <div><h4>LinkedIn</h4><p>linkedin.com/in/samara-mehta</p></div>
         </a>
       </div>
     </div>
@@ -1159,21 +1112,66 @@
   </footer>
 
   <script>
-    const fadeEls = document.querySelectorAll('.fade-up');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          // Reveal when it enters the viewport, or if the reader already scrolled past it.
-          if (entry.isIntersecting || entry.boundingClientRect.bottom < 0) {
-            setTimeout(() => entry.target.classList.add('visible'), i * 80);
-            observer.unobserve(entry.target);
-          }
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Nav shrinks once the page scrolls.
+      var nav = document.getElementById('nav');
+      function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 24); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Scroll reveal. Also reveals anything the reader has already scrolled past.
+      var revealEls = document.querySelectorAll('.fade-up, .slide-in');
+      var tl = document.getElementById('timeline');
+      if ('IntersectionObserver' in window && !reduce) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting || entry.boundingClientRect.bottom < 0) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+
+        var tio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting || e.boundingClientRect.bottom < 0) { tl.classList.add('drawn'); tio.disconnect(); } });
+        }, { threshold: 0.05 });
+        tio.observe(tl);
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+        tl.classList.add('drawn');
+      }
+
+      // Count-up numbers in the hero.
+      document.querySelectorAll('[data-count]').forEach(function (el) {
+        var target = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimals || '0', 10);
+        if (reduce) { el.textContent = target.toFixed(dec); return; }
+        var start = null, dur = 1400, delay = 900;
+        function step(ts) {
+          if (!start) { start = ts; }
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(dec);
+          if (p < 1) { requestAnimationFrame(step); } else { el.textContent = target.toFixed(dec); }
+        }
+        setTimeout(function () { requestAnimationFrame(step); }, delay);
+      });
+
+      // Photo tilts toward the pointer on devices with a mouse.
+      var wrap = document.getElementById('photoWrap'), photo = document.getElementById('photo');
+      wrap.addEventListener('animationend', function () { wrap.classList.remove('enter'); }, { once: true });
+      if (!reduce && window.matchMedia('(pointer: fine)').matches) {
+        wrap.addEventListener('mousemove', function (e) {
+          var r = wrap.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+          photo.style.transform = 'rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg)';
+          photo.style.boxShadow = (-x * 30) + 'px ' + (30 - y * 20) + 'px 60px rgba(31,77,64,0.22)';
         });
-      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-      fadeEls.forEach(el => observer.observe(el));
-    } else {
-      fadeEls.forEach(el => el.classList.add('visible'));
-    }
+        wrap.addEventListener('mouseleave', function () { photo.style.transform = ''; photo.style.boxShadow = ''; });
+      }
+    })();
   </script>
 </body>
 </html>
