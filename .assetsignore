@@ -6,3 +6,6 @@ wrangler.jsonc
 .DS_Store
 .claude
 CLAUDE.md
+
+# Resume source (HTML + generator); only the PDF is served
+resume-src

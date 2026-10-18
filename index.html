@@ -116,6 +116,23 @@
     .nav-links a:hover { color: var(--ink); }
     .nav-links a:hover::after { transform: scaleX(1); }
 
+    .nav-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: var(--paper); border-radius: 10px; cursor: pointer; position: relative; padding: 0; }
+    .nav-toggle span { position: absolute; left: 12px; right: 12px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.3s var(--ease), opacity 0.2s; }
+    .nav-toggle span:nth-child(1) { top: 14px; }
+    .nav-toggle span:nth-child(2) { top: 20px; }
+    .nav-toggle span:nth-child(3) { top: 26px; }
+    body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    body.menu-open { overflow: hidden; }
+
+    .menu { position: fixed; inset: 0; z-index: 90; background: var(--bone); padding: 96px 1.5rem 2rem; display: none; flex-direction: column; }
+    body.menu-open .menu { display: flex; }
+    .menu a { font-family: var(--serif); font-weight: 500; font-size: 2rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; padding: 0.65rem 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; opacity: 0; transform: translateY(14px); animation: rise 0.5s var(--ease) forwards; animation-delay: var(--d, 0s); }
+    .menu a small { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); }
+    .menu .menu-foot { margin-top: auto; font-size: 0.85rem; color: var(--muted); opacity: 0; animation: rise 0.5s var(--ease) 0.5s forwards; }
+    .menu .menu-foot a { font: inherit; display: inline; padding: 0; border: 0; color: var(--forest); font-weight: 600; opacity: 1; transform: none; animation: none; }
+
     /* HERO */
     .hero {
       position: relative;
@@ -798,8 +815,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .photo-wrap { max-width: 380px; margin: 0 auto; width: 100%; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .photo-wrap { order: -1; max-width: 340px; margin: 0 auto; width: 100%; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .lead-grid { grid-template-columns: 1fr; }
@@ -810,13 +827,22 @@
     @media (max-width: 600px) {
       nav { padding: 0 1.1rem; }
       .nav-links { display: none; }
+      .nav-toggle { display: block; }
       section { padding: 4rem 1.25rem; }
-      .hero { padding: 110px 1.25rem 3.5rem; }
+      .hero { padding: 96px 1.25rem 3rem; }
+      .hero-inner { gap: 1.75rem; }
+      .photo-wrap { max-width: 250px; margin: 0; }
+      .photo { border-radius: 14px 14px 80px 14px; }
       .blob { filter: blur(30px); }
       .skills-grid { grid-template-columns: 1fr; }
-      .badge { left: 8px; bottom: 24px; padding: 0.6rem 0.8rem; }
-      .badge-2 { left: auto; right: 8px; top: 20px; bottom: auto; }
-      .ring { right: 14px; bottom: -22px; width: 80px; height: 80px; }
+      .badge { left: auto; right: -10px; bottom: 18px; padding: 0.5rem 0.7rem; border-radius: 12px; }
+      .badge-icon { width: 30px; height: 30px; }
+      .badge b { font-size: 0.78rem; }
+      .badge span { font-size: 0.68rem; }
+      .badge-2, .ring { display: none; }
+      h1 { font-size: clamp(2.7rem, 13vw, 3.4rem); }
+      .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; margin-top: 1.75rem; }
+      .ctas .btn, .ctas .btn-link { font-size: 0.85rem; }
       .timeline::before { left: 22px; }
       .t-item { gap: 1rem; }
       .t-dot { width: 46px; height: 46px; font-size: 1.2rem; border-radius: 13px; }
@@ -912,7 +938,18 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf">Resume</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
   </nav>
+  <div class="menu" id="menu">
+    <a href="#about" style="--d: 0.05s">About <small>01</small></a>
+    <a href="#experience" style="--d: 0.1s">Experience <small>02</small></a>
+    <a href="#skills" style="--d: 0.15s">Skills <small>03</small></a>
+    <a href="#leadership" style="--d: 0.2s">Leadership <small>04</small></a>
+    <a href="#education" style="--d: 0.25s">Education <small>05</small></a>
+    <a href="#contact" style="--d: 0.3s">Contact <small>06</small></a>
+    <a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf" style="--d: 0.35s">Resume <small>PDF</small></a>
+    <div class="menu-foot">Jersey City, NJ · <a href="mailto:samara.mehta@gmail.com">samara.mehta@gmail.com</a></div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1236,7 +1273,7 @@
           <div><dt>Commute</dt><dd>Up to about 40 minutes from Jersey City, NJ</dd></div>
           <div><dt>Certifications</dt><dd>EMT-Basic (NREMT), CPR and AED</dd></div>
           <div><dt>Languages</dt><dd>English and Hindi, fluent. Spanish, conversational</dd></div>
-          <div><dt>Resume</dt><dd><a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf">Download the PDF</a> (email contact only, no phone)</dd></div>
+          <div><dt>Resume</dt><dd><a href="/Samara-Mehta-Resume.pdf" download="Samara-Mehta-Resume.pdf">Download the PDF</a></dd></div>
         </dl>
       </div>
       <div class="contact-grid">
@@ -1267,6 +1304,10 @@
 
       // Nav shrinks once the page scrolls.
       var nav = document.getElementById('nav');
+      var toggle = document.getElementById('navToggle');
+      function setMenu(open) { document.body.classList.toggle('menu-open', open); toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+      toggle.addEventListener('click', function () { setMenu(!document.body.classList.contains('menu-open')); });
+      document.querySelectorAll('#menu a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
       function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 24); }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();

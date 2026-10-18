@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Samara Mehta, resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bone: #f3efe7; --paper: #ffffff; --ink: #1d2b27; --forest: #1f4d40; --copper: #a3542b;
+    --copper-soft: #f1dccc; --sage: #8f9c8c; --line: #e2dccf; --text: #2b3a35; --muted: #5a6a64;
+    --serif: 'Fraunces', Georgia, serif; --sans: 'Inter', system-ui, sans-serif;
+  }
+  html, body { width: 8.5in; height: 11in; background: var(--paper); color: var(--text); font-family: var(--sans); font-size: 9pt; line-height: 1.34; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 8.5in; height: 11in; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+
+  /* Header band */
+  .head { background: var(--bone); padding: 0.4in 0.6in 0.26in; position: relative; overflow: hidden; flex-shrink: 0; }
+  .head::before { content: ''; position: absolute; width: 4.2in; height: 4.2in; border-radius: 50%; right: -1.6in; top: -2.6in; background: radial-gradient(circle, rgba(163,84,43,0.16), transparent 68%); }
+  .head::after { content: ''; position: absolute; left: 0.6in; right: 0.6in; bottom: 0; height: 2px; background: linear-gradient(90deg, var(--copper), var(--sage) 55%, transparent); }
+  .eyebrow { font-size: 7.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--copper); font-weight: 600; display: flex; align-items: center; gap: 7pt; margin-bottom: 7pt; }
+  .eyebrow::before { content: ''; width: 20pt; height: 1.5pt; background: var(--copper); }
+  h1 { font-family: var(--serif); font-weight: 500; font-size: 28pt; letter-spacing: -0.02em; line-height: 1; color: var(--ink); margin-bottom: 6pt; }
+  .role { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 12pt; color: var(--forest); margin-bottom: 9pt; }
+  .contact { display: flex; flex-wrap: wrap; gap: 4pt 14pt; font-size: 8.4pt; color: var(--text); position: relative; }
+  .contact span { display: inline-flex; align-items: center; gap: 5pt; }
+  .contact span::before { content: ''; width: 4pt; height: 4pt; border-radius: 50%; background: var(--copper); }
+
+  /* Body */
+  .body { display: grid; grid-template-columns: 1fr 2.3in; gap: 0 0.26in; padding: 0.2in 0.6in 0.5in; flex: 1; min-height: 0; overflow: hidden; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 10.5pt; color: var(--forest); letter-spacing: 0.01em; margin: 0 0 7pt; padding-bottom: 4pt; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; justify-content: space-between; }
+  h2 small { font-family: var(--sans); font-weight: 600; font-size: 6.8pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); }
+  section { margin-bottom: 9pt; }
+  section:last-child { margin-bottom: 0; }
+  .summary { font-size: 9pt; line-height: 1.4; color: var(--text); }
+  .summary b { color: var(--ink); font-weight: 600; }
+
+  .job { margin-bottom: 7.5pt; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+  .job-title { font-family: var(--serif); font-weight: 600; font-size: 10.5pt; color: var(--ink); }
+  .job-when { font-size: 7.6pt; font-weight: 600; color: var(--copper); background: var(--copper-soft); padding: 2pt 7pt; border-radius: 99pt; white-space: nowrap; }
+  .job-org { font-size: 8.5pt; font-weight: 600; color: var(--forest); margin: 1pt 0 3pt; }
+  .job-org span { font-weight: 400; color: var(--muted); }
+  ul { list-style: none; }
+  .job li { position: relative; padding-left: 11pt; margin-bottom: 1.8pt; font-size: 8.4pt; line-height: 1.32; }
+  .job li::before { content: '→'; position: absolute; left: 0; top: 0; color: var(--copper); font-size: 8pt; }
+  .job.compact li { margin-bottom: 1pt; }
+  .job.compact .job-org { margin-bottom: 2pt; }
+
+  /* Sidebar */
+  .side { background: var(--bone); border-radius: 10pt; padding: 11pt 12pt; align-self: start; }
+  .side h2 { border-bottom-color: #ddd5c4; }
+  .side section { margin-bottom: 8pt; }
+  .lead-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8pt; }
+  .edu-school { font-family: var(--serif); font-weight: 600; font-size: 10pt; color: var(--ink); line-height: 1.2; }
+  .edu-deg { font-size: 8.3pt; color: var(--text); margin: 2pt 0; }
+  .edu-meta { display: flex; flex-wrap: wrap; gap: 3pt; margin: 5pt 0 6pt; }
+  .edu-meta span { font-size: 7.2pt; font-weight: 600; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 4pt; padding: 2pt 5pt; }
+  .course { font-size: 7.5pt; color: var(--muted); line-height: 1.35; }
+  .course b { color: var(--text); font-weight: 600; }
+  .list li { font-size: 8.1pt; line-height: 1.3; display: flex; gap: 5pt; align-items: flex-start; margin-bottom: 1.5pt; }
+  .list li::before { content: ''; flex: 0 0 4pt; width: 4pt; height: 4pt; margin-top: 3.4pt; border-radius: 50%; background: var(--copper); }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 1.5pt 8pt; font-size: 8.1pt; }
+  .kv dt { color: var(--muted); }
+  .kv dd { font-weight: 600; color: var(--ink); }
+  .lead-item { margin-bottom: 4pt; }
+  .lead-item b { display: block; font-size: 8.4pt; color: var(--ink); font-weight: 600; }
+  .lead-item span { font-size: 7.4pt; color: var(--muted); }
+  .avail { background: var(--forest); color: #fff; border-radius: 8pt; padding: 8pt 10pt; }
+  .avail h2 { color: #e6b797; border-bottom-color: rgba(255,255,255,0.18); margin-bottom: 6pt; }
+  .avail .kv dt { color: rgba(255,255,255,0.6); }
+  .avail .kv dd { color: #fff; }
+
+  .foot { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.3in; display: flex; justify-content: space-between; font-size: 7pt; color: var(--muted); letter-spacing: 0.04em; }
+  .foot b { font-family: var(--serif); color: var(--forest); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="head">
+    <div class="eyebrow">Jersey City, NJ · UMass Amherst · Class of 2027</div>
+    <h1>Samara Mehta</h1>
+    <div class="role">Kinesiology student at UMass Amherst. Certified EMT.</div>
+    <div class="contact">
+      <span>samara.mehta@gmail.com</span>
+      <span>linkedin.com/in/samara-mehta</span>
+      <span>samara.mehtahouse.cc</span>
+      <span>Jersey City, NJ</span>
+    </div>
+  </header>
+
+  <div class="body">
+    <main>
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">Kinesiology student grounded in <b>biomechanics, exercise physiology and anatomy</b>, with hands-on hours in an outpatient PT clinic, a hospital's critical care units and a Division I training room. Certified <b>EMT-Basic</b>. Seeking an entry-level clinical role in rehabilitation or hospital care while preparing for a Doctor of Physical Therapy program.</p>
+      </section>
+
+      <section>
+        <h2>Experience <small>Clinical and athletic</small></h2>
+
+        <div class="job">
+          <div class="job-head"><div class="job-title">Physical Therapy Aide</div><div class="job-when">May 2026 – Aug 2026</div></div>
+          <div class="job-org">Nee's Physical Therapy <span>· Hoboken, NJ</span></div>
+          <ul>
+            <li>Guided patients through prescribed therapeutic exercises and ensured proper form under physical therapist supervision.</li>
+            <li>Prepared treatment tables, applied modalities (hot/cold packs, e-stim) and sanitized equipment between sessions.</li>
+            <li>Managed front-desk intake, appointment scheduling and patient check-ins.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><div class="job-title">EMT Student Intern</div><div class="job-when">Oct 2023 – Mar 2024</div></div>
+          <div class="job-org">Nassau University Medical Center <span>· East Meadow, NY</span></div>
+          <ul>
+            <li>Assisted doctors and nurses across critical care units including the Trauma Bay, Pediatric Unit, ICU and Burn Unit.</li>
+            <li>Supported patient care by monitoring vitals, transporting patients and preparing medical equipment.</li>
+            <li>Collaborated with medical teams across departments, maintaining clear communication and professionalism in a high-pressure hospital environment.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><div class="job-title">Summer Intern, Athletic Training</div><div class="job-when">Jun 2023 – Aug 2023</div></div>
+          <div class="job-org">Long Island University <span>· Brookville, NY</span></div>
+          <ul>
+            <li>Assisted the Head Athletic Trainer with daily injury prevention, taping/bracing and active rehabilitation protocols for Division I football student-athletes.</li>
+            <li>Set up sideline hydration stations, emergency equipment and treatment areas for practices and team training sessions.</li>
+            <li>Administered recovery modalities including cryotherapy, therapeutic heat and pneumatic compression systems.</li>
+          </ul>
+        </div>
+
+        <div class="job compact">
+          <div class="job-head"><div class="job-title">Restaurant Team Member</div><div class="job-when">Aug 2024 – Present</div></div>
+          <div class="job-org">The Works Cafe <span>· Amherst, MA</span></div>
+          <ul>
+            <li>High-volume shifts alongside full-time study: register and cash balancing, food and beverage prep, a welcoming floor.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Leadership <small>UMass Amherst</small></h2>
+        <div class="lead-grid">
+          <div class="lead-item"><b>Kinesiology Peer Advisor</b><span>School of Public Health &amp; Health Sciences · Sept 2026 – present</span></div>
+          <div class="lead-item"><b>Marketing Manager</b><span>UMass Kinesiology Club · Sept 2025 – present</span></div>
+          <div class="lead-item"><b>Assistant Marketing Manager</b><span>Chi Omega · Sept 2025 – present</span></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="side">
+      <section>
+        <h2>Education</h2>
+        <div class="edu-school">University of Massachusetts Amherst</div>
+        <div class="edu-deg">B.S. Kinesiology · School of Public Health and Health Sciences · since Aug 2024</div>
+        <div class="edu-meta"><span>GPA 3.6</span><span>Dean's List, Spring 2025</span></div>
+        <div class="course"><b>Coursework:</b> Musculoskeletal Anatomy &amp; Physiology, Biomechanics, Exercise Physiology, Motor Control, Prevention &amp; Care of Athletic Injuries, Physics for Life Sciences, Statistics &amp; Data Modeling</div>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <ul class="list">
+          <li>EMT-Basic, National Registry (NREMT)</li>
+          <li>CPR, AED and BLS</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Clinical skills</h2>
+        <ul class="list">
+          <li>Patient transfers and ambulation assistance</li>
+          <li>Modality preparation: cryo, heat, e-stim</li>
+          <li>Posture and gait screening, goniometry</li>
+          <li>Vitals assessment</li>
+          <li>HIPAA compliance</li>
+          <li>EHR/EMR charting systems</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technical</h2>
+        <ul class="list">
+          <li>Google Workspace, Microsoft Office</li>
+          <li>LINEST statistical modeling, Canva</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <dl class="kv">
+          <dt>English</dt><dd>Fluent</dd>
+          <dt>Hindi</dt><dd>Fluent</dd>
+          <dt>Spanish</dt><dd>Conversational</dd>
+        </dl>
+      </section>
+
+      <section class="avail">
+        <h2>Availability</h2>
+        <dl class="kv">
+          <dt>From</dt><dd>May 2027</dd>
+          <dt>Days</dt><dd>All seven</dd>
+          <dt>Commute</dt><dd>Up to ~40 min from Jersey City</dd>
+        </dl>
+      </section>
+    </aside>
+  </div>
+
+  <div class="foot"><span><b>Samara Mehta</b> · Resume · samara.mehtahouse.cc</span></div>
+</div>
+</body>
+</html>

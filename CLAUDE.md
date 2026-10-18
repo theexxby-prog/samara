@@ -53,38 +53,25 @@ cloud sessions at claude.ai/code. A cloud session sees only this repo, not the M
    it under "Not deployed yet" so the next Mac session ships it.
 
 ## Current state
-_Updated 2026-10-17 from the Mac (hiring extras added to the live look; round-3 structures rejected)._
-- **Live:** the "A1 Clinic" look Samara chose after two Lab rounds (name-first hero, one italic
-  line, bone/forest/copper, Fraunces + Inter, her cutout `photo.webp` on a sage-to-forest
-  gradient, motion throughout, all off under `prefers-reduced-motion`). Added 2026-10-17:
-  - **For hiring managers** panel in Contact: available from May 2027, any day of the week,
-    commute up to about 40 minutes from Jersey City, certifications, languages, resume link.
-  - **Resume (PDF)**: `Samara-Mehta-Resume.pdf`, the Sept 2026 resume with the phone number
-    redacted (PyMuPDF redaction, text really removed). Linked from the hero, the nav, the
-    hiring panel and a third contact card. Regenerate from a new resume by redacting the
-    phone again; never commit the version with the phone.
-  - **Link preview**: `og.jpg` (1200x630, her photo, name and line, made with Pillow from
-    `photo.webp` and the Google-hosted Fraunces/Inter TTFs), `favicon.svg`, `favicon-64.png`,
-    `apple-touch-icon.png`, Open Graph and Twitter meta, canonical URL.
-  - **Line icons** (inline SVG `<symbol>` sheet at the top of `<body>`, `.ico` class) replace
-    every emoji. Add new icons to the sheet; never put emoji back.
-  - **Hidden, ready to publish:** `#hours` (clinical observation hours table per setting)
-    and `#references` (two supervisor quotes). Both carry a `hidden` attribute and TODO text.
-    When Samara supplies the numbers, names and quotes (with permission), fill them in and
-    remove `hidden`; add nav links if wanted.
-- **Design history:** artifacts "Samara Opening Lab" (round 1), "Samara Opening Round 2"
-  (picks: A1, headline H3) and "Samara Site Round 3" (four whole-site structures: Card,
-  Dossier, Story, Board). Vishal rejected all four round-3 structures on 2026-10-17; keep the
-  existing page structure and the A1 look. Don't revert to the earlier teal or coffee pages.
-- **Content source of truth:** Samara's resume "Samara Mehta - Resume (Sept 2026)". Don't
-  invent numbers or roles. Email is samara.mehta@gmail.com (never samara@mehtahouse.cc).
-- **Photo:** originals in `~/Downloads/Samara-Mehta-headshot-4x5-transparent.png` (and the
-  grey-background JPG). Regenerate with `cwebp -q 86 -alpha_q 90 -exact -m 6 <png> -o photo.webp`.
-  The hero falls back to "SM" initials if the image is missing.
-- **Left off the public site on purpose:** phone number (also stripped from the PDF).
-- **Still to confirm with Samara:** "Expected graduation 2027", the LinkedIn link
-  `linkedin.com/in/samara-mehta`, certification expiry dates, observation hours per setting
-  with supervisor names, reference quotes, part-time availability before May 2027.
-- **Local preview:** `samara-site` in `~/dev/.claude/launch.json` (python http.server on this
-  folder, port 8765). Tested desktop 1024 and phone 375 widths on 2026-10-17.
+_Updated 2026-10-17 (evening) from the Mac: phone layout fixes and a designed resume PDF._
+- **Live:** the "A1 Clinic" look (name-first hero, bone/forest/copper, Fraunces + Inter, cutout
+  photo on a sage-to-forest gradient, motion throughout) plus the hiring extras another session
+  added the same day (hiring-manager panel, link preview `og.jpg`, favicons, inline SVG line
+  icons, hidden-until-ready observation-hours and references sections).
+- **Phone (this session):** photo comes first at 250px with one badge (ring and second badge
+  hidden), stats in a 2x2 grid, and a hamburger menu (`.nav-toggle` + `#menu` overlay with
+  staggered Fraunces links). Tested at 375px: no horizontal scroll, menu opens, closes, jumps.
+- **Resume PDF:** `Samara-Mehta-Resume.pdf` is now the designed one-page resume generated from
+  `resume-src/resume.html` with headless Chrome (see `resume-src/README.md`). `resume-src` is in
+  `.assetsignore` so only the PDF is served. No phone number in it. Includes availability
+  (from May 2027, all seven days, ~40 min commute).
+- **Content source of truth:** the Sept 2026 resume; email samara.mehta@gmail.com only.
+- **Photo:** originals in `~/Downloads/Samara-Mehta-headshot-4x5-transparent.png`; regenerate
+  `photo.webp` with `cwebp -q 86 -alpha_q 90 -exact -m 6 <png> -o photo.webp`.
+- **Design history:** artifacts "Samara Opening Lab" (round 1), "Samara Opening Round 2",
+  "Samara Site Round 3" (four structures, all rejected; extras folded into the live site).
+- **Still waiting on Samara:** observation hours per setting, certification expiry dates, one
+  reference quote (unhide the hours and references sections when they arrive); confirm
+  "Expected graduation 2027" and the LinkedIn link.
+- **Local preview:** `samara-site` in `~/dev/.claude/launch.json` (port 8765).
 - **Not deployed yet:** nothing.
