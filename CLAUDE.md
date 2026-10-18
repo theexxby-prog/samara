@@ -65,6 +65,8 @@ _Updated 2026-10-17 (evening) from the Mac: phone layout fixes and a designed re
   `resume-src/resume.html` with headless Chrome (see `resume-src/README.md`). `resume-src` is in
   `.assetsignore` so only the PDF is served. No phone number in it. Includes availability
   (from May 2027, all seven days, ~40 min commute).
+- **Resume link appears once only** (Vishal, 2026-10-17): the contact card beside Email and
+  LinkedIn. Not in the nav, phone menu, hero or hiring panel.
 - **Content source of truth:** the Sept 2026 resume; email samara.mehta@gmail.com only.
 - **Photo:** originals in `~/Downloads/Samara-Mehta-headshot-4x5-transparent.png`; regenerate
   `photo.webp` with `cwebp -q 86 -alpha_q 90 -exact -m 6 <png> -o photo.webp`.
